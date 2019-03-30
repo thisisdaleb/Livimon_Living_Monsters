@@ -15,40 +15,128 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Name="TitleText" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="The Dark Forest" VerticalAlignment="Top" Grid.ColumnSpan="2" Panel.ZIndex="-7" FontFamily="Cabin" FontSize="24" Foreground="White"/>
-                <Border Background="#FF555555" Margin="10,325,0,0" Width="1215" Height="270">
+                
+                <TextBlock x:Name="TitleText" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="The Dark Forest" VerticalAlignment="Top" FontFamily="Cabin" FontSize="24" Foreground="White"/>
+
+                <Border Background="#FF555555" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,35,0,0" Width="315" Height="280">
+                    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5, 5, 5, 5">
+                        <Grid Background="#FF151515" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="250">
+                            <Rectangle Name="MapCell00" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
+                            <Rectangle Name="MapCell10" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,5,0,0"/>
+                            <Rectangle Name="MapCell20" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,5,0,0"/>
+                            <Rectangle Name="MapCell30" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,5,0,0"/>
+                            <Rectangle Name="MapCell40" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,5,0,0"/>
+                            <Rectangle Name="MapCell50" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,5,0,0"/>
+                            <Rectangle Name="MapCell60" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,5,0,0"/>
+                            <Rectangle Name="MapCell70" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,5,0,0"/>
+                            <Rectangle Name="MapCell80" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,5,0,0"/>
+
+                            <Rectangle Name="MapCell01" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,40,0,0"/>
+                            <Rectangle Name="MapCell11" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0"/>
+                            <Rectangle Name="MapCell21" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,40,0,0"/>
+                            <Rectangle Name="MapCell31" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,40,0,0"/>
+                            <Rectangle Name="MapCell41" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,40,0,0"/>
+                            <Rectangle Name="MapCell51" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,40,0,0"/>
+                            <Rectangle Name="MapCell61" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,40,0,0"/>
+                            <Rectangle Name="MapCell71" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,40,0,0"/>
+                            <Rectangle Name="MapCell81" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,40,0,0"/>
+
+                            <Rectangle Name="MapCell02" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,75,0,0"/>
+                            <Rectangle Name="MapCell12" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,75,0,0"/>
+                            <Rectangle Name="MapCell22" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,75,0,0"/>
+                            <Rectangle Name="MapCell32" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,75,0,0"/>
+                            <Rectangle Name="MapCell42" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,75,0,0"/>
+                            <Rectangle Name="MapCell52" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,75,0,0"/>
+                            <Rectangle Name="MapCell62" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,75,0,0"/>
+                            <Rectangle Name="MapCell72" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,75,0,0"/>
+                            <Rectangle Name="MapCell82" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,75,0,0"/>
+
+                            <Rectangle Name="MapCell03" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,110,0,0"/>
+                            <Rectangle Name="MapCell13" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,110,0,0"/>
+                            <Rectangle Name="MapCell23" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,110,0,0"/>
+                            <Rectangle Name="MapCell33" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,110,0,0"/>
+                            <Rectangle Name="MapCell43" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,110,0,0"/>
+                            <Rectangle Name="MapCell53" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,110,0,0"/>
+                            <Rectangle Name="MapCell63" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,110,0,0"/>
+                            <Rectangle Name="MapCell73" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,110,0,0"/>
+                            <Rectangle Name="MapCell83" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,110,0,0"/>
+
+                            <Rectangle Name="MapCell04" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,145,0,0"/>
+                            <Rectangle Name="MapCell14" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,145,0,0"/>
+                            <Rectangle Name="MapCell24" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,145,0,0"/>
+                            <Rectangle Name="MapCell34" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,145,0,0"/>
+                            <Rectangle Name="MapCell44" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,145,0,0"/>
+                            <Rectangle Name="MapCell54" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,145,0,0"/>
+                            <Rectangle Name="MapCell64" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,145,0,0"/>
+                            <Rectangle Name="MapCell74" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,145,0,0"/>
+                            <Rectangle Name="MapCell84" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,145,0,0"/>
+
+                            <Rectangle Name="MapCell05" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,180,0,0"/>
+                            <Rectangle Name="MapCell15" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,180,0,0"/>
+                            <Rectangle Name="MapCell25" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,180,0,0"/>
+                            <Rectangle Name="MapCell35" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,180,0,0"/>
+                            <Rectangle Name="MapCell45" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,180,0,0"/>
+                            <Rectangle Name="MapCell55" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,180,0,0"/>
+                            <Rectangle Name="MapCell65" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,180,0,0"/>
+                            <Rectangle Name="MapCell75" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,180,0,0"/>
+                            <Rectangle Name="MapCell85" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,180,0,0"/>
+
+                            <Rectangle Name="MapCell06" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,215,0,0"/>
+                            <Rectangle Name="MapCell16" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,215,0,0"/>
+                            <Rectangle Name="MapCell26" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,215,0,0"/>
+                            <Rectangle Name="MapCell36" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,215,0,0"/>
+                            <Rectangle Name="MapCell46" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,215,0,0"/>
+                            <Rectangle Name="MapCell56" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,215,0,0"/>
+                            <Rectangle Name="MapCell66" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,215,0,0"/>
+                            <Rectangle Name="MapCell76" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,215,0,0"/>
+                            <Rectangle Name="MapCell86" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,215,0,0"/>
+                        </Grid>
+                    </Viewbox>
+                </Border>
+
+                <Rectangle Name="MapTextBackground" Margin="465,282,0,0" Width="305" Height="30" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name="MapText" HorizontalAlignment="Left" Margin="470,285,0,0" TextWrapping="Wrap" Text="Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="20" Foreground="White"/>
+
+                <Border Background="#FF555555" Margin="10,350,0,0" Width="1215" Height="270" VerticalAlignment="Top">
                     <ScrollViewer Height="260" Margin="5,5,5,5" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="1" Grid.RowSpan="1" HorizontalAlignment="Left" Width="1205" Background="#FF222222">
                         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="You wake up in a dark forest..." VerticalAlignment="Top" FontFamily="Cabin" FontSize="20" Width="1165" Foreground="#FFE2E2E2"/>
                     </ScrollViewer>
                 </Border>
-                <Button x:Name="CloseSave" Content="New Game" HorizontalAlignment="Left" Margin="1150,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="NewSave" Content="Make Save" HorizontalAlignment="Left" Margin="1070,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="SaveFile" Content="Overwrite Save" HorizontalAlignment="Left" Margin="990,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="LoadFile" Content="Load Save" HorizontalAlignment="Left" Margin="910,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleLeftButton1" Content="INVENTORY" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleLeftButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="90,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleCenterButton1" Content="MAP" HorizontalAlignment="Left" Margin="460,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleRightButton1" Content="LIVIMON" HorizontalAlignment="Left" Margin="910,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleRightButton2" Content="TEAM" HorizontalAlignment="Left" Margin="990,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleRightButton3" Content="INTERACTIONS" HorizontalAlignment="Left" Margin="1070,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="MiddleRightButton4" Content="HERE" HorizontalAlignment="Left" Margin="1150,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomLeftButton1" Content="TALKING" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomLeftButton2" Content="RESPONSES" HorizontalAlignment="Left" Margin="90,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomCenterButton1" Content="NPC" HorizontalAlignment="Left" Margin="460,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomRightButton1" Content="SELF" HorizontalAlignment="Left" Margin="910,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomRightButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="990,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomRightButton3" Content="GO" HorizontalAlignment="Left" Margin="1070,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
-                <Button x:Name="BottomRightButton4" Content="HERE" HorizontalAlignment="Left" Margin="1150,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19"/>
+
+                <Button x:Name="CloseSave" Content="New Game" HorizontalAlignment="Left" Margin="1150,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="NewSave" Content="Make Save" HorizontalAlignment="Left" Margin="1070,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="SaveFile" Content="Overwrite Save" HorizontalAlignment="Left" Margin="990,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="LoadFile" Content="Load Save" HorizontalAlignment="Left" Margin="910,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+
+                <Button x:Name="MiddleLeftButton1" Content="INVENTORY" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleLeftButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="90,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+
+                <Button x:Name="MiddleCenterButton1" Content="MAP" HorizontalAlignment="Left" Margin="460,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+
+                <Button x:Name="MiddleRightButton1" Content="LIVIMON" HorizontalAlignment="Left" Margin="910,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleRightButton2" Content="TEAM" HorizontalAlignment="Left" Margin="990,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleRightButton3" Content="INTERACTIONS" HorizontalAlignment="Left" Margin="1070,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleRightButton4" Content="HERE" HorizontalAlignment="Left" Margin="1150,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+
+                <Button x:Name="BottomLeftButton1" Content="TALKING" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomLeftButton2" Content="RESPONSES" HorizontalAlignment="Left" Margin="90,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+
+                <Button x:Name="BottomCenterButton1" Content="NPC" HorizontalAlignment="Left" Margin="460,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+
+                <Button x:Name="BottomRightButton1" Content="SELF" HorizontalAlignment="Left" Margin="910,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomRightButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="990,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomRightButton3" Content="GO" HorizontalAlignment="Left" Margin="1070,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomRightButton4" Content="HERE" HorizontalAlignment="Left" Margin="1150,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
             </Grid>
         </Viewbox>
     </Border>

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Threading;
+using Button = System.Windows.Controls.Button;
 
 namespace LivimonTestWPF
 {
@@ -106,12 +107,13 @@ namespace LivimonTestWPF
           \_____|\____/|_____|  |______|   \/   |______|_| \_|  |_|     |_|  |_/_/    \_\_| \_|_____/|______|______|_|  \_\_____/ 
                                                                                                                           
         */
-        
-        private void saveFileButtonClick()
-        {
 
+        private void click_buttonPressed(object sender, RoutedEventArgs e)
+        {
+            Button clicked = (Button)sender;
+            System.Diagnostics.Debug.WriteLine(clicked.Name);
         }
-        
+
         /*
            _____ _    _ _____    _____  _____       __          __   ______ _    _ _   _  _____ _______ _____ ____  _   _  _____ 
           / ____| |  | |_   _|  |  __ \|  __ \     /\ \        / /  |  ____| |  | | \ | |/ ____|__   __|_   _/ __ \| \ | |/ ____|
