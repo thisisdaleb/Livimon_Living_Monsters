@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LivimonTestWPF
 {
-    //this is just an interface for the Simplex Noise Generator, as it's
+    //this is just an interface for the Simplex Noise Generator
+    //currently it doesn't use octaves, which could reduce the straight edges you can find in the map
     public class NoiseGenerator
     {
         private SimplexNoiseGenerator simplex;
@@ -26,7 +27,7 @@ namespace LivimonTestWPF
 
         public int getRand(int _x, int _y, int _maxValue)
         {
-            return (int)Math.Floor((simplex.Evaluate(_x * 0.1, _y * 0.1) + 1) / 2 * (_maxValue + 1));
+            return (int) Math.Floor((simplex.Evaluate(_x * 0.1, _y * 0.1) + 1) / 2 * (_maxValue + 0.9999f));
         }
     }
 }

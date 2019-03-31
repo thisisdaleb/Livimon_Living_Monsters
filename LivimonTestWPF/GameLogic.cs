@@ -20,8 +20,7 @@ namespace LivimonTestWPF
         public void runInitialLogic()
         {
             MapSystem.initializeWorldMap();
-            GUIHandler.setMapGrid(MapSystem.getCurrentMapListView());
-            GUIHandler.screenUpdatePrepared();
+            runFullGUIUpdate();
         }
 
         public void runLogicUpdate()
@@ -32,8 +31,9 @@ namespace LivimonTestWPF
 
         public void runFullGUIUpdate()
         {
-            GUIHandler.setDescription("You are wandering the world, ");
-            GUIHandler.setTitle("The World"); ;
+            GUIHandler.setDescription("You are wandering the world... ");
+            GUIHandler.setTitle("The World");
+            GUIHandler.setMapText(MapSystem.getTileName());
             GUIHandler.setMapGrid(MapSystem.getCurrentMapListView());
 
             GUIHandler.screenUpdatePrepared();

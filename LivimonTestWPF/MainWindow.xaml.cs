@@ -127,26 +127,21 @@ namespace LivimonTestWPF
 
         private void MouseUp_PlayerCell(object sender, RoutedEventArgs e)
         {
-            MapText.Text = "clicked player";
         }
         private void MouseUp_LeftCell(object sender, RoutedEventArgs e)
         {
-            MapText.Text = "clicked left";
             controller.clickedLeft();
         }
         private void MouseUp_RightCell(object sender, RoutedEventArgs e)
         {
-            MapText.Text = "clicked right";
             controller.clickedRight();
         }
         private void MouseUp_UpCell(object sender, RoutedEventArgs e)
         {
-            MapText.Text = "clicked up";
             controller.clickedUp();
         }
         private void MouseUp_DownCell(object sender, RoutedEventArgs e)
         {
-            MapText.Text = "clicked down";
             controller.clickedDown();
         }
 

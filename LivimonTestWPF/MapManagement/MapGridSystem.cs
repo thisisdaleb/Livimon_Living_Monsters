@@ -28,7 +28,6 @@ namespace LivimonTestWPF
 
         public RectangleUpdate[,] getCurrentMapListView()
         {
-            System.Diagnostics.Debug.WriteLine("Player currently at row " + playerPosition[0] + " and column " + playerPosition[1]);
             RectangleUpdate[,] newGridView = new RectangleUpdate[7, 9];
             for (int row = -3; row <= 3; row++)
             {
@@ -52,6 +51,11 @@ namespace LivimonTestWPF
                 }
             }
             return newGridView;
+        }
+
+        internal string getTileName()
+        {
+            return currentMap.map[playerPosition[0], playerPosition[1]].getBiome();
         }
 
         internal void moveLeft()
@@ -123,7 +127,12 @@ namespace LivimonTestWPF
         {
             return tileColor;
         }
+        public string getBiome()
+        {
+            return biome;
+        }
     }
+
     static class MapTileDefs
     {
         static public Dictionary<string, SolidColorBrush> biomeToBrushList = new Dictionary<string, SolidColorBrush>();
@@ -139,7 +148,7 @@ namespace LivimonTestWPF
             biomeToBrushList.Add("city", Brushes.DarkGray);
             biomeToBrushList.Add("mountain", Brushes.Brown);
             biomeToBrushList.Add("volcano", Brushes.Red);
-            biomeList = new string[] {"water", "desert", "forest", "grassland", "tundra", "city", "mountain", "volcano" };
+            biomeList = new string[] {"water", "grassland", "forest", "mountain", "desert", "tundra", "city", "volcano"};
         }
     }
 }
