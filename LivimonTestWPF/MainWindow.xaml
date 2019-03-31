@@ -101,11 +101,11 @@
                 </Border>
 
                 <Rectangle Name="MapTextBackground" Margin="465,282,0,0" Width="305" Height="30" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBlock x:Name="MapText" HorizontalAlignment="Left" Margin="470,285,0,0" TextWrapping="Wrap" Text="Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="20" Foreground="White"/>
+                <TextBlock x:Name="MapText" HorizontalAlignment="Left" Margin="470,285,0,0" TextWrapping="Wrap" Text="Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Foreground="White"/>
 
                 <Border Background="#FF555555" Margin="10,350,0,0" Width="1215" Height="270" VerticalAlignment="Top">
                     <ScrollViewer Height="260" Margin="5,5,5,5" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="1" Grid.RowSpan="1" HorizontalAlignment="Left" Width="1205" Background="#FF222222">
-                        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="You wake up in a dark forest..." VerticalAlignment="Top" FontFamily="Cabin" FontSize="20" Width="1165" Foreground="#FFE2E2E2"/>
+                        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="You wake up in a dark forest..." VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="1165" Foreground="#FFE2E2E2"/>
                     </ScrollViewer>
                 </Border>
 

@@ -35,7 +35,7 @@ namespace LivimonTestWPF
                 for (int col = -4; col <= 4; col++)
                 {
                     int currentY = playerPosition[0] + row;
-                    int currentX = playerPosition[0] + col;
+                    int currentX = playerPosition[1] + col;
                     if (currentY < 0 || currentY > (currentMap.map.GetLength(0) - 1))
                     {
                         newGridView[row + 3, col + 4] = new RectangleUpdate();

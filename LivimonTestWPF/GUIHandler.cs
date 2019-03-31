@@ -124,14 +124,14 @@ namespace LivimonTestWPF
     public class RectangleUpdate
     {
         public Brush color = null;
-        public string tooltip;
-        public bool turnOffRectangle;
+        public string tooltip = null;
+        public bool turnOffRectangle = false;
 
-        public RectangleUpdate(Brush _color, string _tooltip = "", bool _isActive = false)
+        public RectangleUpdate(Brush _color, string _tooltip = null, bool _turnOff = false)
         {
             color = _color;
             tooltip = _tooltip;
-            turnOffRectangle = _isActive;
+            turnOffRectangle = _turnOff;
         }
 
         public RectangleUpdate()

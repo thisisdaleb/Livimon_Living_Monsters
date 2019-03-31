@@ -56,8 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MapMangement\MapGridSystem.cs" />
-    <Compile Include="MapMangement\WorldMapManager.cs" />
+    <Compile Include="MapManagement\MapGridSystem.cs" />
+    <Compile Include="MapManagement\NoiseGenerator.cs" />
+    <Compile Include="MapManagement\SimplexNoiseGenerator.cs" />
+    <Compile Include="MapManagement\WorldMapManager.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

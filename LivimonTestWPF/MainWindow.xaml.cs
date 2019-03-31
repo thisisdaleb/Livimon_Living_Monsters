@@ -220,7 +220,7 @@ namespace LivimonTestWPF
                 RectangleUpdate[,] newRects = GUIHandler.getMapGrid();
                 if (newRects.GetLength(0) != mapCellGrid.GetLength(0) || newRects.GetLength(1) != mapCellGrid.GetLength(1))
                 {
-                    System.Diagnostics.Debug.WriteLine("BAD MATRIX SIZED FOR MAP");
+                    throw new System.ArgumentException("BAD MATRIX SIZED FOR MAP");
                 }
                 for (int row = 0; row < mapCellGrid.GetLength(0); row++)
                 {
@@ -230,8 +230,9 @@ namespace LivimonTestWPF
                         RectangleUpdate currentUpdate = newRects[row, col];
                         if(currentUpdate == null)
                         {
-                            System.Diagnostics.Debug.WriteLine("set grid failed at " + row + " col " + col);
+                            throw new System.ArgumentException("updateMapGrid failed at row " + row + " col " + col);
                         }
+
                         if (currentUpdate.turnOffRectangle)
                         {
                             if (currentRectangle.StrokeThickness > 0)
@@ -239,11 +240,11 @@ namespace LivimonTestWPF
                                 if (currentRectangle.Stroke != null)
                                 {
                                     removeClickableRectsClick(currentRectangle);
-                                    currentRectangle.Stroke = null;
                                 }
                             }
 
-                            if(currentUpdate.color != null) currentRectangle.Fill = currentUpdate.color;
+                            if (currentUpdate.color != null) currentRectangle.Fill = currentUpdate.color;
+                            else currentRectangle.Fill = Brushes.Black;
                             if( !string.IsNullOrEmpty(currentUpdate.tooltip) ) currentRectangle.ToolTip = currentUpdate.tooltip;
                         }
                         else
@@ -253,8 +254,6 @@ namespace LivimonTestWPF
                                 if (currentRectangle.Stroke == null)
                                 {
                                     addClickableRectsClick(currentRectangle);
-                                    //currentRectangle.Stroke = new SolidColorBrush(Color.FromRgb(0xE2, 0xE2, 0xE2));
-                                    currentRectangle.Stroke = Brushes.Black;
                                 }
                             }
 
@@ -271,22 +270,26 @@ namespace LivimonTestWPF
             if (_currentRectangle.Name == "MapCellRow2Col4")
             {
                 _currentRectangle.MouseUp -= new MouseButtonEventHandler(MouseUp_UpCell);
+                _currentRectangle.Stroke = null;
                 MapCellRow2Col4Background.Fill = Brushes.Black;
             }
             if (_currentRectangle.Name == "MapCellRow3Col3")
             {
                 _currentRectangle.MouseUp -= new MouseButtonEventHandler(MouseUp_LeftCell);
-                MapCellRow2Col4Background.Fill = Brushes.Black;
+                _currentRectangle.Stroke = null;
+                MapCellRow3Col3Background.Fill = Brushes.Black;
             }
             if (_currentRectangle.Name == "MapCellRow3Col5")
             {
                 _currentRectangle.MouseUp -= new MouseButtonEventHandler(MouseUp_RightCell);
-                MapCellRow2Col4Background.Fill = Brushes.Black;
+                _currentRectangle.Stroke = null;
+                MapCellRow3Col5Background.Fill = Brushes.Black;
             }
             if (_currentRectangle.Name == "MapCellRow4Col4")
             {
                 _currentRectangle.MouseUp -= new MouseButtonEventHandler(MouseUp_DownCell);
-                MapCellRow2Col4Background.Fill = Brushes.Black;
+                _currentRectangle.Stroke = null;
+                MapCellRow4Col4Background.Fill = Brushes.Black;
             }
             //if (_currentRectangle.Name == "MapCellRow3Col4") _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_PlayerCell);
         }
@@ -296,21 +299,26 @@ namespace LivimonTestWPF
             if (_currentRectangle.Name == "MapCellRow2Col4")
             {
                 _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_UpCell);
+                _currentRectangle.Stroke = Brushes.Black;
                 MapCellRow2Col4Background.Fill = Brushes.White;
             }
             if (_currentRectangle.Name == "MapCellRow3Col3"){
                 _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_LeftCell);
-                MapCellRow2Col4Background.Fill = Brushes.White;
+                _currentRectangle.Stroke = Brushes.Black;
+                MapCellRow3Col3Background.Fill = Brushes.White;
             }
             if (_currentRectangle.Name == "MapCellRow3Col5"){
                 _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_RightCell);
-                MapCellRow2Col4Background.Fill = Brushes.White;
+                _currentRectangle.Stroke = Brushes.Black;
+                MapCellRow3Col5Background.Fill = Brushes.White;
             }
             if (_currentRectangle.Name == "MapCellRow4Col4"){
                 _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_DownCell);
-                MapCellRow2Col4Background.Fill = Brushes.White;
+                _currentRectangle.Stroke = Brushes.Black;
+                MapCellRow4Col4Background.Fill = Brushes.White;
             }
             //if (_currentRectangle.Name == "MapCellRow3Col4") _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_PlayerCell);
+            //currentRectangle.Stroke = new SolidColorBrush(Color.FromRgb(0xE2, 0xE2, 0xE2));
         }
     }
 }
