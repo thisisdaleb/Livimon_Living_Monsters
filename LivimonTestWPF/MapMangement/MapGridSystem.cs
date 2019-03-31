@@ -28,6 +28,7 @@ namespace LivimonTestWPF
 
         public RectangleUpdate[,] getCurrentMapListView()
         {
+            System.Diagnostics.Debug.WriteLine("Player currently at row " + playerPosition[0] + " and column " + playerPosition[1]);
             RectangleUpdate[,] newGridView = new RectangleUpdate[7, 9];
             for (int row = -3; row <= 3; row++)
             {
@@ -35,11 +36,11 @@ namespace LivimonTestWPF
                 {
                     int currentY = playerPosition[0] + row;
                     int currentX = playerPosition[0] + col;
-                    if (currentY < 0 || currentY >= currentMap.map.GetLength(0))
+                    if (currentY < 0 || currentY > (currentMap.map.GetLength(0) - 1))
                     {
                         newGridView[row + 3, col + 4] = new RectangleUpdate();
                     }
-                    else if (currentX < 0 || currentX >= currentMap.map.GetLength(1))
+                    else if (currentX < 0 || currentX > (currentMap.map.GetLength(1) - 1))
                     {
                         newGridView[row + 3, col + 4] = new RectangleUpdate();
                     }
@@ -51,6 +52,26 @@ namespace LivimonTestWPF
                 }
             }
             return newGridView;
+        }
+
+        internal void moveLeft()
+        {
+            if (playerPosition[1] > 0) playerPosition[1] -= 1;
+        }
+
+        internal void moveRight()
+        {
+            if (playerPosition[1] < currentMap.map.GetLength(1)) playerPosition[1] += 1;
+        }
+
+        internal void moveUp()
+        {
+            if (playerPosition[0] > 0) playerPosition[0] -= 1;
+        }
+
+        internal void moveDown()
+        {
+            if (playerPosition[0] < currentMap.map.GetLength(0)) playerPosition[0] += 1;
         }
     }
 

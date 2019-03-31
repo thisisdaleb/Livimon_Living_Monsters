@@ -9,24 +9,18 @@ namespace LivimonTestWPF
 {
     class GameLogic
     {
-        private MapGridSystem mapManager;
+        private MapGridSystem MapSystem;
 
         // constructor happens on the main, make it quick!
         public GameLogic()
         {
-            mapManager = new MapGridSystem();
+            MapSystem = new MapGridSystem();
         }
 
         public void runInitialLogic()
         {
-            mapManager.initializeWorldMap();
-            GUIHandler.setMapGrid(mapManager.getCurrentMapListView());
-            GUIHandler.screenUpdatePrepared();
-
-            Thread.Sleep(3000);
-
-            GUIHandler.setDescription("THE GAME LOGIC HAPPENED BUT ACTUALLY 4 REAL");
-            GUIHandler.setTitle("AAAAAH");
+            MapSystem.initializeWorldMap();
+            GUIHandler.setMapGrid(MapSystem.getCurrentMapListView());
             GUIHandler.screenUpdatePrepared();
         }
 
@@ -35,5 +29,51 @@ namespace LivimonTestWPF
             //this is code to run every 10 ms
 
         }
+
+        public void runFullGUIUpdate()
+        {
+            GUIHandler.setDescription("You are wandering the world, ");
+            GUIHandler.setTitle("The World"); ;
+            GUIHandler.setMapGrid(MapSystem.getCurrentMapListView());
+
+            GUIHandler.screenUpdatePrepared();
+        }
+
+        /*
+       _____ ____  _   _ _______ _____   ____  _       _____ 
+      / ____/ __ \| \ | |__   __|  __ \ / __ \| |     / ____|
+     | |   | |  | |  \| |  | |  | |__) | |  | | |    | (___  
+     | |   | |  | | . ` |  | |  |  _  /| |  | | |     \___ \ 
+     | |___| |__| | |\  |  | |  | | \ \| |__| | |____ ____) |
+      \_____\____/|_| \_|  |_|  |_|  \_\\____/|______|_____/ 
+                                                         
+         */
+
+        //I put the request move in here because they will not just call mapManager but also modify the player eventually
+
+        public void playerRequestsMoveLeft()
+        {
+            MapSystem.moveLeft();
+            runFullGUIUpdate();
+        }
+
+        public void playerRequestsMoveRight()
+        {
+            MapSystem.moveRight();
+            runFullGUIUpdate();
+        }
+
+        public void playerRequestsMoveUp()
+        {
+            MapSystem.moveUp();
+            runFullGUIUpdate();
+        }
+
+        public void playerRequestsMoveDown()
+        {
+            MapSystem.moveDown();
+            runFullGUIUpdate();
+        }
+
     }
 }
