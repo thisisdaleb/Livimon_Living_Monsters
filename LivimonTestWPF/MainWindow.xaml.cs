@@ -20,23 +20,25 @@ namespace LivimonTestWPF
 {
     public partial class MainWindow : Window
     {
-        private bool currentlyUpdatingGUI = false;
-        GameLogic gameLogic;
-        GameController controller;
-
         //ThreadExampleViewModel viewModel = new ThreadExampleViewModel();
         //https://arcanecode.com/2007/09/07/adding-wpf-controls-progrrammatically/ look at this
         //https://www.c-sharpcorner.com/UploadFile/mahesh/openfiledialog-in-wpf/ and this
         //consider https://www.codeproject.com/Articles/165368/WPF-MVVM-Quick-Start-Tutorial so you have good code practices?
-        
-         /*
-           _____ _    _ _____    ________      ________ _   _ _______    _    _          _   _ _____  _      ______ _____   _____ 
-          / ____| |  | |_   _|  |  ____\ \    / /  ____| \ | |__   __|  | |  | |   /\   | \ | |  __ \| |    |  ____|  __ \ / ____|
-         | |  __| |  | | | |    | |__   \ \  / /| |__  |  \| |  | |     | |__| |  /  \  |  \| | |  | | |    | |__  | |__) | (___  
-         | | |_ | |  | | | |    |  __|   \ \/ / |  __| | . ` |  | |     |  __  | / /\ \ | . ` | |  | | |    |  __| |  _  / \___ \ 
-         | |__| | |__| |_| |_   | |____   \  /  | |____| |\  |  | |     | |  | |/ ____ \| |\  | |__| | |____| |____| | \ \ ____) |
-          \_____|\____/|_____|  |______|   \/   |______|_| \_|  |_|     |_|  |_/_/    \_\_| \_|_____/|______|______|_|  \_\_____/ 
-                                                                                                                          
+        //http://patorjk.com/software/taag/#p=display&f=Big&t=Type%20Something%20 for text
+
+        private bool currentlyUpdatingGUI = false;
+        GameLogic gameLogic;
+        GameController controller;
+        Rectangle[,] mapCellGrid;
+
+        /*
+          _____ _______       _____ _______ _    _ _____  
+         / ____|__   __|/\   |  __ \__   __| |  | |  __ \ 
+        | (___    | |  /  \  | |__) | | |  | |  | | |__) |
+         \___ \   | | / /\ \ |  _  /  | |  | |  | |  ___/ 
+         ____) |  | |/ ____ \| | \ \  | |  | |__| | |     
+        |_____/   |_/_/    \_\_|  \_\ |_|   \____/|_|     
+
         */
 
         public MainWindow()
@@ -45,7 +47,7 @@ namespace LivimonTestWPF
             DataContext = this;
             InitializeSystem();
             textBlock.Text = "This will contain a description of your surroundings, actions performed by your livimon, dialog from NPCs, combat events, queries asking you what to do next, or general story text.";
-
+            
             Thread logicThread = new Thread(runLogicUpdate);
             logicThread.IsBackground = true;
             logicThread.Start();
@@ -56,26 +58,35 @@ namespace LivimonTestWPF
         }
 
         /*
-          _____ _   _ _____ _______ _____          _      _____ ____________     _____          __  __ ______ 
-         |_   _| \ | |_   _|__   __|_   _|   /\   | |    |_   _|___  /  ____|   / ____|   /\   |  \/  |  ____|
-           | | |  \| | | |    | |    | |    /  \  | |      | |    / /| |__     | |  __   /  \  | \  / | |__   
-           | | | . ` | | |    | |    | |   / /\ \ | |      | |   / / |  __|    | | |_ | / /\ \ | |\/| |  __|  
-          _| |_| |\  |_| |_   | |   _| |_ / ____ \| |____ _| |_ / /__| |____   | |__| |/ ____ \| |  | | |____ 
-         |_____|_| \_|_____|  |_|  |_____/_/    \_\______|_____/_____|______|   \_____/_/    \_\_|  |_|______|
-          _____ _   _ _____ _______ _____          _      _____ ____________     _____ ____  _   _ _______ _____   ____  _      _      ______ _____  
-         |_   _| \ | |_   _|__   __|_   _|   /\   | |    |_   _|___  /  ____|   / ____/ __ \| \ | |__   __|  __ \ / __ \| |    | |    |  ____|  __ \ 
-           | | |  \| | | |    | |    | |    /  \  | |      | |    / /| |__     | |   | |  | |  \| |  | |  | |__) | |  | | |    | |    | |__  | |__) |
-           | | | . ` | | |    | |    | |   / /\ \ | |      | |   / / |  __|    | |   | |  | | . ` |  | |  |  _  /| |  | | |    | |    |  __| |  _  / 
-          _| |_| |\  |_| |_   | |   _| |_ / ____ \| |____ _| |_ / /__| |____   | |___| |__| | |\  |  | |  | | \ \| |__| | |____| |____| |____| | \ \ 
-         |_____|_| \_|_____|  |_|  |_____/_/    \_\______|_____/_____|______|   \_____\____/|_| \_|  |_|  |_|  \_\\____/|______|______|______|_|  \_\
-                                                                                                                                             
+          _____ _   _ _____ _______ _____          _      _____ ____________  
+         |_   _| \ | |_   _|__   __|_   _|   /\   | |    |_   _|___  /  ____| 
+           | | |  \| | | |    | |    | |    /  \  | |      | |    / /| |__    
+           | | | . ` | | |    | |    | |   / /\ \ | |      | |   / / |  __|   
+          _| |_| |\  |_| |_   | |   _| |_ / ____ \| |____ _| |_ / /__| |____  
+         |_____|_| \_|_____|  |_|  |_____/_/    \_\______|_____/_____|______| 
+        
         */
 
         private void InitializeSystem()
         {
-            //not on background thread, make sure it's quick
+            putAllElementsIntoMapCellGrid();
             gameLogic = new GameLogic();
             controller = new GameController(gameLogic);
+        }
+
+        private void putAllElementsIntoMapCellGrid()
+        {
+            //If the rectangles were dynamically generated, we wouldn't have this mess or the one in the xaml, but maybe that could introduce other problems
+            mapCellGrid = new Rectangle[,]
+                {
+                    {MapCellRow0Col0, MapCellRow0Col1, MapCellRow0Col2, MapCellRow0Col3, MapCellRow0Col4, MapCellRow0Col5, MapCellRow0Col6, MapCellRow0Col7, MapCellRow0Col8},
+                    {MapCellRow1Col0, MapCellRow1Col1, MapCellRow1Col2, MapCellRow1Col3, MapCellRow1Col4, MapCellRow1Col5, MapCellRow1Col6, MapCellRow1Col7, MapCellRow1Col8},
+                    {MapCellRow2Col0, MapCellRow2Col1, MapCellRow2Col2, MapCellRow2Col3, MapCellRow2Col4, MapCellRow2Col5, MapCellRow2Col6, MapCellRow2Col7, MapCellRow2Col8},
+                    {MapCellRow3Col0, MapCellRow3Col1, MapCellRow3Col2, MapCellRow3Col3, MapCellRow3Col4, MapCellRow3Col5, MapCellRow3Col6, MapCellRow3Col7, MapCellRow3Col8},
+                    {MapCellRow4Col0, MapCellRow4Col1, MapCellRow4Col2, MapCellRow4Col3, MapCellRow4Col4, MapCellRow4Col5, MapCellRow4Col6, MapCellRow4Col7, MapCellRow4Col8},
+                    {MapCellRow5Col0, MapCellRow5Col1, MapCellRow5Col2, MapCellRow5Col3, MapCellRow5Col4, MapCellRow5Col5, MapCellRow5Col6, MapCellRow5Col7, MapCellRow5Col8},
+                    {MapCellRow6Col0, MapCellRow6Col1, MapCellRow6Col2, MapCellRow6Col3, MapCellRow6Col4, MapCellRow6Col5, MapCellRow6Col6, MapCellRow6Col7, MapCellRow6Col8}
+                };
         }
 
         /*
@@ -114,6 +125,27 @@ namespace LivimonTestWPF
             System.Diagnostics.Debug.WriteLine(clicked.Name);
         }
 
+        private void MouseUp_PlayerCell(object sender, RoutedEventArgs e)
+        {
+            MapText.Text = "clicked player";
+        }
+        private void MouseUp_LeftCell(object sender, RoutedEventArgs e)
+        {
+            MapText.Text = "clicked left";
+        }
+        private void MouseUp_RightCell(object sender, RoutedEventArgs e)
+        {
+            MapText.Text = "clicked right";
+        }
+        private void MouseUp_UpCell(object sender, RoutedEventArgs e)
+        {
+            MapText.Text = "clicked up";
+        }
+        private void MouseUp_DownCell(object sender, RoutedEventArgs e)
+        {
+            MapText.Text = "clicked down";
+        }
+
         /*
            _____ _    _ _____    _____  _____       __          __   ______ _    _ _   _  _____ _______ _____ ____  _   _  _____ 
           / ____| |  | |_   _|  |  __ \|  __ \     /\ \        / /  |  ____| |  | | \ | |/ ____|__   __|_   _/ __ \| \ | |/ ____|
@@ -124,12 +156,12 @@ namespace LivimonTestWPF
 
         */
         //consider rewriting this to use onPropertyChanged(?) so people don't laugh at bad code
-        //33ms = 30 frames per second
+        //15ms = 60 frames per second, but don't expect that to actually be 60, it could take an extra frame to update
         private void runGuiUpdate()
         {
             while (true)
             {
-                Thread.Sleep(33); 
+                Thread.Sleep(15); 
                 Dispatcher.Invoke(() =>
                 {
                     if (GUIHandler.isReadyToUpdate())
@@ -146,6 +178,8 @@ namespace LivimonTestWPF
 
             updateDescription();
             updateTitle();
+            updateMapText();
+            updateMapGrid();
 
             currentlyUpdatingGUI = false;
         }
@@ -158,6 +192,121 @@ namespace LivimonTestWPF
         private void updateTitle()
         {
             if (GUIHandler.titleChanged()) TitleText.Text = GUIHandler.getTitle();
+        }
+
+        private void updateMapText()
+        {
+            if (GUIHandler.mapTextChanged()) MapText.Text = GUIHandler.getMapText();
+        }
+
+        /*
+      __  __          _____     _____ _____  _____ _____  
+     |  \/  |   /\   |  __ \   / ____|  __ \|_   _|  __ \ 
+     | \  / |  /  \  | |__) | | |  __| |__) | | | | |  | |
+     | |\/| | / /\ \ |  ___/  | | |_ |  _  /  | | | |  | |
+     | |  | |/ ____ \| |      | |__| | | \ \ _| |_| |__| |
+     |_|  |_/_/    \_\_|       \_____|_|  \_\_____|_____/ 
+                                                      
+        */
+
+        private void updateMapGrid()
+        {
+            if (GUIHandler.mapGridChanged())
+            {
+                RectangleUpdate[,] newRects = GUIHandler.getMapGrid();
+                if (newRects.GetLength(0) != mapCellGrid.GetLength(0) || newRects.GetLength(1) != mapCellGrid.GetLength(1))
+                {
+                    System.Diagnostics.Debug.WriteLine("BAD MATRIX SIZED FOR MAP");
+                }
+                for (int row = 0; row < mapCellGrid.GetLength(0); row++)
+                {
+                    for (int col = 0; col < mapCellGrid.GetLength(1); col++)
+                    {
+                        Rectangle currentRectangle = mapCellGrid[row, col];
+                        RectangleUpdate currentUpdate = newRects[row, col];
+                        if(currentUpdate == null)
+                        {
+                            System.Diagnostics.Debug.WriteLine("set grid failed at " + row + " col " + col);
+                        }
+                        if (currentUpdate.turnOffRectangle)
+                        {
+                            if (currentRectangle.StrokeThickness > 0)
+                            {
+                                if (currentRectangle.Stroke != null)
+                                {
+                                    removeClickableRectsClick(currentRectangle);
+                                    currentRectangle.Stroke = null;
+                                }
+                            }
+
+                            if(currentUpdate.color != null) currentRectangle.Fill = currentUpdate.color;
+                            if( !string.IsNullOrEmpty(currentUpdate.tooltip) ) currentRectangle.ToolTip = currentUpdate.tooltip;
+                        }
+                        else
+                        {
+                            if (currentRectangle.StrokeThickness > 0)
+                            {
+                                if (currentRectangle.Stroke == null)
+                                {
+                                    addClickableRectsClick(currentRectangle);
+                                    //currentRectangle.Stroke = new SolidColorBrush(Color.FromRgb(0xE2, 0xE2, 0xE2));
+                                    currentRectangle.Stroke = Brushes.Black;
+                                }
+                            }
+
+                            currentRectangle.Fill = currentUpdate.color;
+                            if (!string.IsNullOrEmpty( currentUpdate.tooltip )) currentRectangle.ToolTip = currentUpdate.tooltip;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void removeClickableRectsClick(Rectangle _currentRectangle)
+        {
+            if (_currentRectangle.Name == "MapCellRow2Col4")
+            {
+                _currentRectangle.MouseUp -= new MouseButtonEventHandler(MouseUp_UpCell);
+                MapCellRow2Col4Background.Fill = Brushes.Black;
+            }
+            if (_currentRectangle.Name == "MapCellRow3Col3")
+            {
+                _currentRectangle.MouseUp -= new MouseButtonEventHandler(MouseUp_LeftCell);
+                MapCellRow2Col4Background.Fill = Brushes.Black;
+            }
+            if (_currentRectangle.Name == "MapCellRow3Col5")
+            {
+                _currentRectangle.MouseUp -= new MouseButtonEventHandler(MouseUp_RightCell);
+                MapCellRow2Col4Background.Fill = Brushes.Black;
+            }
+            if (_currentRectangle.Name == "MapCellRow4Col4")
+            {
+                _currentRectangle.MouseUp -= new MouseButtonEventHandler(MouseUp_DownCell);
+                MapCellRow2Col4Background.Fill = Brushes.Black;
+            }
+            //if (_currentRectangle.Name == "MapCellRow3Col4") _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_PlayerCell);
+        }
+
+        private void addClickableRectsClick(Rectangle _currentRectangle)
+        {
+            if (_currentRectangle.Name == "MapCellRow2Col4")
+            {
+                _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_UpCell);
+                MapCellRow2Col4Background.Fill = Brushes.White;
+            }
+            if (_currentRectangle.Name == "MapCellRow3Col3"){
+                _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_LeftCell);
+                MapCellRow2Col4Background.Fill = Brushes.White;
+            }
+            if (_currentRectangle.Name == "MapCellRow3Col5"){
+                _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_RightCell);
+                MapCellRow2Col4Background.Fill = Brushes.White;
+            }
+            if (_currentRectangle.Name == "MapCellRow4Col4"){
+                _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_DownCell);
+                MapCellRow2Col4Background.Fill = Brushes.White;
+            }
+            //if (_currentRectangle.Name == "MapCellRow3Col4") _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_PlayerCell);
         }
     }
 }

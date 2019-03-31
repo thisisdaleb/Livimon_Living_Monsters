@@ -15,81 +15,87 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                
+
                 <TextBlock x:Name="TitleText" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="The Dark Forest" VerticalAlignment="Top" FontFamily="Cabin" FontSize="24" Foreground="White"/>
 
                 <Border Background="#FF555555" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,35,0,0" Width="315" Height="280">
                     <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5, 5, 5, 5">
-                        <Grid Background="#FF151515" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="250">
-                            <Rectangle Name="MapCell00" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
-                            <Rectangle Name="MapCell10" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,5,0,0"/>
-                            <Rectangle Name="MapCell20" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,5,0,0"/>
-                            <Rectangle Name="MapCell30" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,5,0,0"/>
-                            <Rectangle Name="MapCell40" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,5,0,0"/>
-                            <Rectangle Name="MapCell50" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,5,0,0"/>
-                            <Rectangle Name="MapCell60" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,5,0,0"/>
-                            <Rectangle Name="MapCell70" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,5,0,0"/>
-                            <Rectangle Name="MapCell80" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,5,0,0"/>
+                        <Grid Name="MapGrid" Background="#FF151515" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="250">
+                            <Rectangle Name="MapCellRow0Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
+                            <Rectangle Name="MapCellRow0Col1" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,5,0,0"/>
+                            <Rectangle Name="MapCellRow0Col2" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,5,0,0"/>
+                            <Rectangle Name="MapCellRow0Col3" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,5,0,0"/>
+                            <Rectangle Name="MapCellRow0Col4" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,5,0,0"/>
+                            <Rectangle Name="MapCellRow0Col5" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,5,0,0"/>
+                            <Rectangle Name="MapCellRow0Col6" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,5,0,0"/>
+                            <Rectangle Name="MapCellRow0Col7" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,5,0,0"/>
+                            <Rectangle Name="MapCellRow0Col8" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,5,0,0"/>
 
-                            <Rectangle Name="MapCell01" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,40,0,0"/>
-                            <Rectangle Name="MapCell11" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0"/>
-                            <Rectangle Name="MapCell21" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,40,0,0"/>
-                            <Rectangle Name="MapCell31" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,40,0,0"/>
-                            <Rectangle Name="MapCell41" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,40,0,0"/>
-                            <Rectangle Name="MapCell51" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,40,0,0"/>
-                            <Rectangle Name="MapCell61" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,40,0,0"/>
-                            <Rectangle Name="MapCell71" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,40,0,0"/>
-                            <Rectangle Name="MapCell81" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col1" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col2" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col3" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col4" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col5" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col6" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col7" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,40,0,0"/>
+                            <Rectangle Name="MapCellRow1Col8" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,40,0,0"/>
 
-                            <Rectangle Name="MapCell02" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,75,0,0"/>
-                            <Rectangle Name="MapCell12" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,75,0,0"/>
-                            <Rectangle Name="MapCell22" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,75,0,0"/>
-                            <Rectangle Name="MapCell32" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,75,0,0"/>
-                            <Rectangle Name="MapCell42" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,75,0,0"/>
-                            <Rectangle Name="MapCell52" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,75,0,0"/>
-                            <Rectangle Name="MapCell62" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,75,0,0"/>
-                            <Rectangle Name="MapCell72" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,75,0,0"/>
-                            <Rectangle Name="MapCell82" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,75,0,0"/>
+                            <Rectangle Name="MapCellRow2Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,75,0,0"/>
+                            <Rectangle Name="MapCellRow2Col1" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,75,0,0"/>
+                            <Rectangle Name="MapCellRow2Col2" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,75,0,0"/>
+                            <Rectangle Name="MapCellRow2Col3" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,75,0,0"/>
+                            <Rectangle Name="MapCellRow2Col4Background" Width="32" Height="32" Fill="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="144,74,0,0"/>
+                            <Rectangle Name="MapCellRow2Col4" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,75,0,0" MouseUp="MouseUp_UpCell" StrokeThickness="1" Stroke="Black"/>
+                            <Rectangle Name="MapCellRow2Col5" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,75,0,0"/>
+                            <Rectangle Name="MapCellRow2Col6" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,75,0,0"/>
+                            <Rectangle Name="MapCellRow2Col7" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,75,0,0"/>
+                            <Rectangle Name="MapCellRow2Col8" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,75,0,0"/>
 
-                            <Rectangle Name="MapCell03" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,110,0,0"/>
-                            <Rectangle Name="MapCell13" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,110,0,0"/>
-                            <Rectangle Name="MapCell23" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,110,0,0"/>
-                            <Rectangle Name="MapCell33" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,110,0,0"/>
-                            <Rectangle Name="MapCell43" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,110,0,0"/>
-                            <Rectangle Name="MapCell53" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,110,0,0"/>
-                            <Rectangle Name="MapCell63" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,110,0,0"/>
-                            <Rectangle Name="MapCell73" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,110,0,0"/>
-                            <Rectangle Name="MapCell83" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,110,0,0"/>
+                            <Rectangle Name="MapCellRow3Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,110,0,0"/>
+                            <Rectangle Name="MapCellRow3Col1" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,110,0,0"/>
+                            <Rectangle Name="MapCellRow3Col2" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,110,0,0"/>
+                            <Rectangle Name="MapCellRow3Col3Background" Width="32" Height="32" Fill="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="109,109,0,0"/>
+                            <Rectangle Name="MapCellRow3Col3" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,110,0,0" MouseUp="MouseUp_LeftCell" StrokeThickness="1" Stroke="Black"/>
+                            <!-- Row3Col4 is the Player's current cell -->
+                            <Rectangle Name="MapCellRow3Col4Background" Width="32" Height="32" Fill="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="144,109,0,0"/>
+                            <Rectangle Name="MapCellRow3Col4" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,110,0,0" MouseUp="MouseUp_PlayerCell" StrokeThickness="1" Stroke="Black"/>
+                            <Rectangle Name="MapCellRow3Col5Background" Width="32" Height="32" Fill="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="179,109,0,0"/>
+                            <Rectangle Name="MapCellRow3Col5" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,110,0,0" MouseUp="MouseUp_RightCell" StrokeThickness="1" Stroke="Black"/>
+                            <Rectangle Name="MapCellRow3Col6" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,110,0,0"/>
+                            <Rectangle Name="MapCellRow3Col7" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,110,0,0"/>
+                            <Rectangle Name="MapCellRow3Col8" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,110,0,0"/>
 
-                            <Rectangle Name="MapCell04" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,145,0,0"/>
-                            <Rectangle Name="MapCell14" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,145,0,0"/>
-                            <Rectangle Name="MapCell24" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,145,0,0"/>
-                            <Rectangle Name="MapCell34" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,145,0,0"/>
-                            <Rectangle Name="MapCell44" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,145,0,0"/>
-                            <Rectangle Name="MapCell54" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,145,0,0"/>
-                            <Rectangle Name="MapCell64" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,145,0,0"/>
-                            <Rectangle Name="MapCell74" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,145,0,0"/>
-                            <Rectangle Name="MapCell84" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,145,0,0"/>
+                            <Rectangle Name="MapCellRow4Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,145,0,0"/>
+                            <Rectangle Name="MapCellRow4Col1" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,145,0,0"/>
+                            <Rectangle Name="MapCellRow4Col2" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,145,0,0"/>
+                            <Rectangle Name="MapCellRow4Col3" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,145,0,0"/>
+                            <Rectangle Name="MapCellRow4Col4Background" Width="32" Height="32" Fill="White"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="144,144,0,0"/>
+                            <Rectangle Name="MapCellRow4Col4" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,145,0,0" MouseUp="MouseUp_DownCell" StrokeThickness="1" Stroke="Black"/>
+                            <Rectangle Name="MapCellRow4Col5" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,145,0,0"/>
+                            <Rectangle Name="MapCellRow4Col6" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,145,0,0"/>
+                            <Rectangle Name="MapCellRow4Col7" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,145,0,0"/>
+                            <Rectangle Name="MapCellRow4Col8" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,145,0,0"/>
 
-                            <Rectangle Name="MapCell05" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,180,0,0"/>
-                            <Rectangle Name="MapCell15" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,180,0,0"/>
-                            <Rectangle Name="MapCell25" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,180,0,0"/>
-                            <Rectangle Name="MapCell35" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,180,0,0"/>
-                            <Rectangle Name="MapCell45" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,180,0,0"/>
-                            <Rectangle Name="MapCell55" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,180,0,0"/>
-                            <Rectangle Name="MapCell65" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,180,0,0"/>
-                            <Rectangle Name="MapCell75" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,180,0,0"/>
-                            <Rectangle Name="MapCell85" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col1" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col2" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col3" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col4" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col5" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col6" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col7" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,180,0,0"/>
+                            <Rectangle Name="MapCellRow5Col8" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,180,0,0"/>
 
-                            <Rectangle Name="MapCell06" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,215,0,0"/>
-                            <Rectangle Name="MapCell16" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,215,0,0"/>
-                            <Rectangle Name="MapCell26" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,215,0,0"/>
-                            <Rectangle Name="MapCell36" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,215,0,0"/>
-                            <Rectangle Name="MapCell46" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,215,0,0"/>
-                            <Rectangle Name="MapCell56" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,215,0,0"/>
-                            <Rectangle Name="MapCell66" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,215,0,0"/>
-                            <Rectangle Name="MapCell76" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,215,0,0"/>
-                            <Rectangle Name="MapCell86" Width="30" Height="30" Fill="DarkGray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col1" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col2" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col3" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col4" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col5" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col6" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col7" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,215,0,0"/>
+                            <Rectangle Name="MapCellRow6Col8" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="285,215,0,0"/>
                         </Grid>
                     </Viewbox>
                 </Border>
