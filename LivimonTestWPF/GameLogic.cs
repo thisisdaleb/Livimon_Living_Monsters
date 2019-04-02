@@ -20,6 +20,7 @@ namespace LivimonTestWPF
         public void runInitialLogic()
         {
             MapSystem.initializeWorldMap();
+            GUIHandler.setFullMap(MapSystem.getFullMapListView());
             runFullGUIUpdate();
         }
 

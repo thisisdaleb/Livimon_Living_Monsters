@@ -119,6 +119,27 @@ namespace LivimonTestWPF
             hasMapGrid = true;
             mapGrid = _newValue;
         }
+
+        /////////////////////////
+        //modify full map
+        /////////////////////////
+        static RectangleUpdate[,] fullMap;
+        static bool hasFullMap = false;
+        public static bool fullMapChanged()
+        {
+            return hasFullMap;
+        }
+        public static RectangleUpdate[,] getFullMap()
+        {
+            hasFullMap = false;
+            return fullMap;
+        }
+        //must assume that if game logic is trying to set the grid, it's changed. It's too complex to put that check in GUIHandler.
+        public static void setFullMap(RectangleUpdate[,] _newValue)
+        {
+            hasFullMap = true;
+            fullMap = _newValue;
+        }
     }
     
     public class RectangleUpdate

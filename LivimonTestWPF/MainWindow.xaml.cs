@@ -179,6 +179,7 @@ namespace LivimonTestWPF
             updateTitle();
             updateMapText();
             updateMapGrid();
+            updateFullMap();
 
             currentlyUpdatingGUI = false;
         }
@@ -314,6 +315,38 @@ namespace LivimonTestWPF
             }
             //if (_currentRectangle.Name == "MapCellRow3Col4") _currentRectangle.MouseUp += new MouseButtonEventHandler(MouseUp_PlayerCell);
             //currentRectangle.Stroke = new SolidColorBrush(Color.FromRgb(0xE2, 0xE2, 0xE2));
+        }
+
+        private void updateFullMap()
+        {
+            if (GUIHandler.fullMapChanged())
+            {
+                //remove previous full map
+                FullMapGrid.Children.Clear();
+                RenderOptions.SetEdgeMode(FullMapGrid, EdgeMode.Aliased);
+
+                RectangleUpdate[,] fullMap = GUIHandler.getFullMap();
+
+                //repopulate completely
+                for (int row = 0; row < fullMap.GetLength(0); row++)
+                {
+                    for (int col = 0; col < fullMap.GetLength(1); col++)
+                    {
+                        Rectangle newRect = new Rectangle()
+                        {
+                            Width = 1,
+                            Height = 1,
+                            Fill = fullMap[row, col].color,
+                            Stroke = fullMap[row, col].color,
+                            StrokeThickness = 0,
+                            Margin = new Thickness(col,row,0,0),
+                            HorizontalAlignment = HorizontalContentAlignment,
+                            VerticalAlignment = VerticalAlignment.Top
+                        };
+                        FullMapGrid.Children.Add(newRect);
+                    }
+                }
+            }
         }
     }
 }

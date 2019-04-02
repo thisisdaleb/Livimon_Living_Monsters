@@ -17,7 +17,7 @@ namespace LivimonTestWPF
         public MapGridSystem()
         {
             MapTileDefs.initializeMapTileDefs();
-            playerPosition = new int[]{ 5, 5};
+            playerPosition = new int[]{ 20, 20 };
         }
 
         public void initializeWorldMap()
@@ -51,6 +51,31 @@ namespace LivimonTestWPF
                 }
             }
             return newGridView;
+        }
+
+        public RectangleUpdate[,] getFullMapListView()
+        {
+            RectangleUpdate[,] fullMapGrid = new RectangleUpdate[currentMap.map.GetLength(0), currentMap.map.GetLength(1)];
+            for (int row = 0; row < fullMapGrid.GetLength(0); row++)
+            {
+                for (int col = 0; col < fullMapGrid.GetLength(1); col++)
+                {
+                    if (row < 0 || row > (currentMap.map.GetLength(0) - 1))
+                    {
+                        fullMapGrid[row, col] = new RectangleUpdate();
+                    }
+                    else if (col < 0 || col > (currentMap.map.GetLength(1) - 1))
+                    {
+                        fullMapGrid[row, col] = new RectangleUpdate();
+                    }
+                    else
+                    {
+                        MapTile currentMapTile = currentMap.map[row, col];
+                        fullMapGrid[row, col] = new RectangleUpdate(currentMapTile.getColor());
+                    }
+                }
+            }
+            return fullMapGrid;
         }
 
         internal string getTileName()
@@ -148,7 +173,7 @@ namespace LivimonTestWPF
             biomeToBrushList.Add("city", Brushes.DarkGray);
             biomeToBrushList.Add("mountain", Brushes.Brown);
             biomeToBrushList.Add("volcano", Brushes.Red);
-            biomeList = new string[] {"water", "grassland", "forest", "mountain", "desert", "tundra", "city", "volcano"};
+            biomeList = new string[] {"water", "grassland", "water", "forest", "mountain", "desert", "grassland", "tundra", "city", "volcano"};
         }
     }
 }

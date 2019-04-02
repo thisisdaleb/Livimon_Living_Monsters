@@ -21,9 +21,11 @@
                 <!-- INVENTORY BOX -->
                 <Border Name="InventoryBorder"  Background="#FF555555" Margin="10,35,0,0" Width="315" Height="280" HorizontalAlignment="Left"  VerticalAlignment="Top">
                     <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5, 5, 5, 5" Height="270" Width="305">
-                        <ScrollViewer Height="270" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="305" Background="#FF222222">
+                        <!-- <ScrollViewer Height="270" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="305" Background="#FF222222">
                             <TextBlock x:Name="InventoryBlock" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="Potion                                                  x 1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="275" Foreground="#FFE2E2E2"/>
-                        </ScrollViewer>
+                        </ScrollViewer> -->
+                        <Grid Name="FullMapGrid" Background="#FF151515" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        </Grid>
                     </Viewbox>
                 </Border>
                 
