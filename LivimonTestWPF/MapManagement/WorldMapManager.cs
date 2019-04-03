@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media;
 
 namespace LivimonTestWPF
 {
+
     class WorldMapManager : MapManager
     {
         //A cool seed the last time I checked was -1674238469
@@ -14,13 +17,35 @@ namespace LivimonTestWPF
         private float[,] elevationGrid;
         private float[,] percipitationGrid;
         private float[,] temperatureGrid;
+        
+        public Dictionary<string, MapTileDef> biomeList;
 
         protected override Map makeMap()
         {
             Map worldMap = new Map(sizeY, sizeX);
 
+            //make dict of biomes
+            /*
+            biomeToBrushList.Add("desert", System.Windows.Media.Brushes.Yellow);
+            biomeToBrushList.Add("forest", Brushes.Green);
+            biomeToBrushList.Add("water", Brushes.Blue);
+            biomeToBrushList.Add("grassland", Brushes.Lime);
+            biomeToBrushList.Add("tundra", Brushes.White);
+            biomeToBrushList.Add("city", Brushes.DarkGray);
+            biomeToBrushList.Add("mountain", Brushes.Brown);
+            biomeToBrushList.Add("volcano", Brushes.Red);
+            */
+            biomeList = new Dictionary<string, MapTileDef>();
+            biomeList.Add("water", new MapTileDef("water", Brushes.Blue));
+            biomeList.Add("grassland", new MapTileDef("grassland", Brushes.Lime));
+            biomeList.Add("forest", new MapTileDef("forest", Brushes.Green));
+            biomeList.Add("desert", new MapTileDef("desert", Brushes.Yellow));
+            biomeList.Add("tundra", new MapTileDef("tundra", Brushes.White));
+            biomeList.Add("mountain", new MapTileDef("mountain", Brushes.Brown));
+
             //some reasonable value examples are 0.1 for 50 with 9 types, 0.05 for 100,
-            NoiseGenerator noiseGen = new NoiseGenerator(8f/sizeY);
+            NoiseGenerator noiseGen = new NoiseGenerator(4f/sizeY);
+
 
             //DEFINE ELEVATION
             elevationGrid = new float[sizeY, sizeX];
@@ -84,42 +109,42 @@ namespace LivimonTestWPF
                     //low lying land is a water basin
                     if (elevationGrid[row, col] < 0.3)
                     {
-                        worldMap.map[row, col] = new MapTile("water");
+                        worldMap.map[row, col] = new MapTile(biomeList["water"]);
                     }
                     //high land is mountains
                     else if(elevationGrid[row, col] > 0.7)
                     {
-                        worldMap.map[row, col] = new MapTile("mountain");
+                        worldMap.map[row, col] = new MapTile(biomeList["mountain"]);
                     }
                     //low water is desert (unless it's cold, in which case it's tundra)
                     else if (percipitationGrid[row, col] < 0.3 && temperatureGrid[row, col] > 0.32)
                     {
-                        worldMap.map[row, col] = new MapTile("desert");
+                        worldMap.map[row, col] = new MapTile(biomeList["desert"]);
                     }
                     //lots of rain creates a water basin
                     else if (percipitationGrid[row, col] > 0.8)
                     {
-                        worldMap.map[row, col] = new MapTile("water");
+                        worldMap.map[row, col] = new MapTile(biomeList["water"]);
                     }
                     //large temps is also desert
                     else if (temperatureGrid[row, col] > 0.7)
                     {
-                        worldMap.map[row, col] = new MapTile("desert");
+                        worldMap.map[row, col] = new MapTile(biomeList["desert"]);
                     }
                     //low temps causes snow
                     else if (temperatureGrid[row, col] < 0.32)
                     {
-                        worldMap.map[row, col] = new MapTile("tundra");
+                        worldMap.map[row, col] = new MapTile(biomeList["tundra"]);
                     }
                     //a good amount of rain makes a forest
                     else if (percipitationGrid[row, col] > 0.6)
                     {
-                        worldMap.map[row, col] = new MapTile("forest");
+                        worldMap.map[row, col] = new MapTile(biomeList["forest"]);
                     }
                     //the world's default ranges make grassland
                     else
                     {
-                        worldMap.map[row, col] = new MapTile("grassland");
+                        worldMap.map[row, col] = new MapTile(biomeList["grassland"]);
                     }
                 }
             }

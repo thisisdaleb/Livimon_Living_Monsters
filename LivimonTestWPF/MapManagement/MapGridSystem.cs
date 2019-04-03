@@ -16,7 +16,6 @@ namespace LivimonTestWPF
 
         public MapGridSystem()
         {
-            MapTileDefs.initializeMapTileDefs();
             playerPosition = new int[]{ 20, 20 };
         }
 
@@ -80,7 +79,7 @@ namespace LivimonTestWPF
 
         internal string getTileName()
         {
-            return currentMap.map[playerPosition[0], playerPosition[1]].getBiome();
+            return currentMap.map[playerPosition[0], playerPosition[1]].getTypeName();
         }
 
         internal void moveLeft()
@@ -101,79 +100,6 @@ namespace LivimonTestWPF
         internal void moveDown()
         {
             if (playerPosition[0] < currentMap.map.GetLength(0)) playerPosition[0] += 1;
-        }
-    }
-
-    abstract class MapManager
-    {
-        protected Map map;
-        public MapManager()
-        {
-            map = makeMap();
-        }
-
-        protected abstract Map makeMap();
-
-        public Map getMap()
-        {
-            return map;
-        }
-
-    }
-
-    class Map
-    {
-        public MapTile[,] map;
-        
-        public Map(int _y, int _x) {
-            map = new MapTile[_y, _x];
-        }
-
-    }
-
-    class MapTile
-    {
-        private string biome;
-        private SolidColorBrush tileColor;
-        
-        public MapTile(string _biomeType)
-        {
-            biome = _biomeType;
-            tileColor = MapTileDefs.biomeToBrushList[biome];
-        }
-
-        public MapTile(int _biomeNum)
-        {
-            biome = MapTileDefs.biomeList[_biomeNum];
-            tileColor = MapTileDefs.biomeToBrushList[biome];
-        }
-
-        public SolidColorBrush getColor()
-        {
-            return tileColor;
-        }
-        public string getBiome()
-        {
-            return biome;
-        }
-    }
-
-    static class MapTileDefs
-    {
-        static public Dictionary<string, SolidColorBrush> biomeToBrushList = new Dictionary<string, SolidColorBrush>();
-        static public string[] biomeList;
-
-        public static void initializeMapTileDefs()
-        {
-            biomeToBrushList.Add("desert", System.Windows.Media.Brushes.Yellow);
-            biomeToBrushList.Add("forest", Brushes.Green);
-            biomeToBrushList.Add("water", Brushes.Blue);
-            biomeToBrushList.Add("grassland", Brushes.Lime);
-            biomeToBrushList.Add("tundra", Brushes.White);
-            biomeToBrushList.Add("city", Brushes.DarkGray);
-            biomeToBrushList.Add("mountain", Brushes.Brown);
-            biomeToBrushList.Add("volcano", Brushes.Red);
-            biomeList = new string[] {"water", "grassland", "water", "forest", "mountain", "desert", "grassland", "tundra", "city", "volcano"};
         }
     }
 }
