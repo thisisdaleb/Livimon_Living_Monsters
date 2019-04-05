@@ -19,25 +19,62 @@
                 <TextBlock x:Name="TitleText" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="The Dark Forest" VerticalAlignment="Top" FontFamily="Cabin" FontSize="24" Foreground="White"/>
 
                 <!-- INVENTORY BOX -->
-                <Border Name="LeftWindowBorder"  Background="#FF555555" Margin="10,35,0,0" Width="395" Height="280" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-                <Border Name="FullMapBorder"  Background="#FF222222" Margin="15,40,0,0" Width="235" Height="235" HorizontalAlignment="Left"  VerticalAlignment="Top">
-                    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="235" Width="235">
+                <Border Name="LeftWindowBorder"  Background="#FF555555" Margin="10,35,0,0" Width="395" Height="310" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                <Border Name="FullMapBorder"  Background="#FF222222" Margin="15,40,0,0" Width="190" Height="190" HorizontalAlignment="Left"  VerticalAlignment="Top">
+                    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="190" Width="190">
                         <!-- <ScrollViewer Height="270" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="305" Background="#FF222222">
                             <TextBlock x:Name="InventoryBlock" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="Potion                                                  x 1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="275" Foreground="#FFE2E2E2"/>
                         </ScrollViewer> -->
-                        <Grid Name="FullMapGrid" Background="#FF151515" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <Grid Name="FullMapGrid" Background="#FF222222" HorizontalAlignment="Left" VerticalAlignment="Top">
                         </Grid>
                     </Viewbox>
                 </Border>
-                <Rectangle x:Name="FullMapTextBackground" Margin="15,280,0,0" Width="235" Height="30" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBlock x:Name="FullMapText" HorizontalAlignment="Left" Margin="20,285,0,0" TextWrapping="Wrap" Text="Full Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <Rectangle x:Name="InventoryBackground" Margin="255,40,0,0" Width="145" Height="270" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <!-- Way to do it if toggle between quest and map
+                <Rectangle x:Name="FullMapTextBackground" Margin="15,235,0,0" Width="190" Height="75" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="ToggleMapAndQuests" Content="Toggle between Minimap and Quests" HorizontalAlignment="Left" Margin="20,285,0,0" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Rectangle x:Name="InventoryBackground" Margin="210,40,0,0" Width="190" Height="270" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                -->
+                <!-- all 3 visible at once, but with inventory buttons
+                <Rectangle x:Name="FullMapTextBackground" Margin="15,235,0,0" Width="385" Height="75" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle x:Name="InventoryBackground" Margin="210,40,0,0" Width="190" Height="190" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                -->
+                <Border x:Name="FullMapTextBackground" Margin="15,235,0,0" Width="385" Height="105" Background="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <ScrollViewer Height="105" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="385" Background="#FF222222">
+                        <Grid Name="QuestGrid" Background="#FF222222" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <TextBlock x:Name="MainQuestText" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="Main Quest: Find Livimon to join your party" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="SideQuest1Text" HorizontalAlignment="Left" Margin="5,30,0,0" TextWrapping="Wrap" Text="Side Quest: Explore the world" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="SideQuest2Text" HorizontalAlignment="Left" Margin="5,55,0,0" TextWrapping="Wrap" Text="Side Quest: Help Supa find his inner strength" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="SideQuest3Text" HorizontalAlignment="Left" Margin="5,80,0,0" TextWrapping="Wrap" Text="Side Quest: Help Elle train her swimming speed" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="SideQuest4Text" HorizontalAlignment="Left" Margin="5,105,0,0" TextWrapping="Wrap" Text="Side Quest: Help child find their lost balloon" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
+                        </Grid>
+                    </ScrollViewer>
+                </Border>
+                <Border x:Name="InventoryBackground" Margin="210,40,0,0" Width="190" Height="190" Background="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <ScrollViewer Height="190" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="190" Background="#FF222222">
+                        <Grid Name="InventoryGrid" Background="#FF222222" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <TextBlock x:Name="InvItem1Name" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="Potion" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="140" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem1Amount" HorizontalAlignment="Left" Margin="145,5,5,5" TextWrapping="Wrap" Text="x1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="35" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem2Name" HorizontalAlignment="Left" Margin="5,35,5,5" TextWrapping="Wrap" Text="Ether" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="140" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem2Amount" HorizontalAlignment="Left" Margin="145,35,5,5" TextWrapping="Wrap" Text="x1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="35" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem3Name" HorizontalAlignment="Left" Margin="5,65,5,5" TextWrapping="Wrap" Text="Revive" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="140" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem3Amount" HorizontalAlignment="Left" Margin="145,65,5,5" TextWrapping="Wrap" Text="x1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="35" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem4Name" HorizontalAlignment="Left" Margin="5,95,5,5" TextWrapping="Wrap" Text="Super Revive" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="140" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem4Amount" HorizontalAlignment="Left" Margin="145,95,5,5" TextWrapping="Wrap" Text="x1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="35" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem5Name" HorizontalAlignment="Left" Margin="5,125,5,5" TextWrapping="Wrap" Text="Super Potion" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="140" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem5Amount" HorizontalAlignment="Left" Margin="145,125,5,5" TextWrapping="Wrap" Text="x1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="35" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem6Name" HorizontalAlignment="Left" Margin="5,155,5,5" TextWrapping="Wrap" Text="Smoke Ball" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="140" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem6Amount" HorizontalAlignment="Left" Margin="145,155,5,5" TextWrapping="Wrap" Text="x1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="35" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem7Name" HorizontalAlignment="Left" Margin="5,185,5,5" TextWrapping="Wrap" Text="Scent Mask" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="140" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="InvItem7Amount" HorizontalAlignment="Left" Margin="145,185,5,5" TextWrapping="Wrap" Text="x1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="35" Foreground="#FFE2E2E2"/>
+                        </Grid>
+                    </ScrollViewer>
+                </Border>
 
 
                 <!-- MAP GRID -->
                 <Border Background="#FF555555" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,35,0,0" Width="315" Height="280">
                     <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5, 5, 5, 5">
-                        <Grid Name="MapGrid" Background="#FF151515" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="250">
+                        <Grid Name="MapGrid" Background="#FF222222" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="250">
                             <Rectangle Name="MapCellRow0Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
                             <Rectangle Name="MapCellRow0Col1" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="40,5,0,0"/>
                             <Rectangle Name="MapCellRow0Col2" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,5,0,0"/>
@@ -121,40 +158,40 @@
                 <TextBlock x:Name="MapText" HorizontalAlignment="Left" Margin="470,287,0,0" TextWrapping="Wrap" Text="Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
 
                 <!-- PARTY BOX -->
-                <Rectangle Name="TeamBorder" Margin="910,35,0,0" Width="315" Height="280" Fill="#FF555555"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Rectangle Name="TeamInfoBackground" Margin="915,40,0,0" Width="305" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle Name="TeamBorder" Margin="830,35,0,0" Width="395" Height="280" Fill="#FF555555"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle Name="TeamInfoBackground" Margin="835,40,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-                    <TextBlock x:Name="headerSpecies" HorizontalAlignment="Left" Margin="925,40,0,0" TextWrapping="Wrap" Text="Species" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                    <TextBlock x:Name="headerName" HorizontalAlignment="Left" Margin="925,60,0,0" TextWrapping="Wrap" Text="NickName" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                    <TextBlock x:Name="headerType" HorizontalAlignment="Left" Margin="1010,40,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                    <TextBlock x:Name="headerLvl" HorizontalAlignment="Left" Margin="1010,60,0,0" TextWrapping="Wrap" Text="Level" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                    <TextBlock x:Name="headerNeeds" HorizontalAlignment="Left" Margin="1095,50,0,0" TextWrapping="Wrap" Text="Needs" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="headerSpecies" HorizontalAlignment="Left" Margin="845,40,0,0" TextWrapping="Wrap" Text="Species" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="headerName" HorizontalAlignment="Left" Margin="845,60,0,0" TextWrapping="Wrap" Text="NickName" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="headerType" HorizontalAlignment="Left" Margin="930,40,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="headerLvl" HorizontalAlignment="Left" Margin="930,60,0,0" TextWrapping="Wrap" Text="Level" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="headerNeeds" HorizontalAlignment="Left" Margin="1015,50,0,0" TextWrapping="Wrap" Text="Needs" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
 
                 <!-- <Rectangle Name="TeamEdgesBackdrop" Margin="913,88,0,0" Width="309" Height="224" Fill="lightGray"  HorizontalAlignment="Left" VerticalAlignment="Top"/> -->
-                <Rectangle Name="Team1Background" Margin="915,90,0,0" Width="305" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle Name="Team1Background" Margin="835,90,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
                 <!-- will be removed, just for testing -->
-                <TextBlock x:Name="member1Species" HorizontalAlignment="Left" Margin="925,90,0,0" TextWrapping="Wrap" Text="Dakecko" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member1Name" HorizontalAlignment="Left" Margin="925,110,0,0" TextWrapping="Wrap" Text="Supa" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member1Type" HorizontalAlignment="Left" Margin="1010,90,0,0" TextWrapping="Wrap" Text="Flame" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member1Lvl" HorizontalAlignment="Left" Margin="1010,110,0,0" TextWrapping="Wrap" Text="Lvl 8" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member1Needs1" HorizontalAlignment="Left" Margin="1095,90,0,0" TextWrapping="Wrap" Text="Healthy" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member1Needs2" HorizontalAlignment="Left" Margin="1095,110,0,0" TextWrapping="Wrap" Text="Slightly hungry" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member1Species" HorizontalAlignment="Left" Margin="845,90,0,0" TextWrapping="Wrap" Text="Dakecko" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member1Name" HorizontalAlignment="Left" Margin="845,110,0,0" TextWrapping="Wrap" Text="Supa" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member1Type" HorizontalAlignment="Left" Margin="930,90,0,0" TextWrapping="Wrap" Text="Flame" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member1Lvl" HorizontalAlignment="Left" Margin="930,110,0,0" TextWrapping="Wrap" Text="Lvl 8" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member1Needs1" HorizontalAlignment="Left" Margin="1015,90,0,0" TextWrapping="Wrap" Text="Healthy" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member1Needs2" HorizontalAlignment="Left" Margin="1015,110,0,0" TextWrapping="Wrap" Text="Slightly hungry" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
 
-                <Rectangle Name="Team2Background" Margin="915,135,0,0" Width="305" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle Name="Team2Background" Margin="835,135,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
                 <!-- will be removed, just for testing -->
-                <TextBlock x:Name="member2Species" HorizontalAlignment="Left" Margin="925,135,0,0" TextWrapping="Wrap" Text="Eludano" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member2Name" HorizontalAlignment="Left" Margin="925,155,0,0" TextWrapping="Wrap" Text="Elle" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member2Type" HorizontalAlignment="Left" Margin="1010,135,0,0" TextWrapping="Wrap" Text="Water" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member2Lvl" HorizontalAlignment="Left" Margin="1010,155,0,0" TextWrapping="Wrap" Text="Lvl 7" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member2Needs1" HorizontalAlignment="Left" Margin="1095,135,0,0" TextWrapping="Wrap" Text="Healthy" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-                <TextBlock x:Name="member2Needs2" HorizontalAlignment="Left" Margin="1095,155,0,0" TextWrapping="Wrap" Text="Slightly bored" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member2Species" HorizontalAlignment="Left" Margin="845,135,0,0" TextWrapping="Wrap" Text="Eludano" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member2Name" HorizontalAlignment="Left" Margin="845,155,0,0" TextWrapping="Wrap" Text="Elle" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member2Type" HorizontalAlignment="Left" Margin="930,135,0,0" TextWrapping="Wrap" Text="Water" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member2Lvl" HorizontalAlignment="Left" Margin="930,155,0,0" TextWrapping="Wrap" Text="Lvl 7" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member2Needs1" HorizontalAlignment="Left" Margin="1015,135,0,0" TextWrapping="Wrap" Text="Healthy" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="member2Needs2" HorizontalAlignment="Left" Margin="1015,155,0,0" TextWrapping="Wrap" Text="Slightly bored" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
 
-                <Rectangle Name="Team3Background" Margin="915,180,0,0" Width="305" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Rectangle Name="Team4Background" Margin="915,225,0,0" Width="305" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Rectangle Name="Team5Background" Margin="915,270,0,0" Width="305" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                
+                <Rectangle Name="Team3Background" Margin="835,180,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle Name="Team4Background" Margin="835,225,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle Name="Team5Background" Margin="835,270,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
                 <!-- MAIN TEXT DESCRIPTION -->
                 <Border Background="#FF555555" Margin="10,350,0,0" Width="1215" Height="270" VerticalAlignment="Top">
                     <ScrollViewer Height="260" Margin="5,5,5,5" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="1" Grid.RowSpan="1" HorizontalAlignment="Left" Width="1205" Background="#FF222222">
@@ -167,22 +204,26 @@
                 <Button x:Name="NewSave" Content="Make Save" HorizontalAlignment="Left" Margin="1070,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="SaveFile" Content="Overwrite Save" HorizontalAlignment="Left" Margin="990,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="LoadFile" Content="Load Save" HorizontalAlignment="Left" Margin="910,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="Options" Content="Options" HorizontalAlignment="Left" Margin="830,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
 
+                <!-- UNUSED INVENTORY BUTTONS
                 <Button x:Name="MiddleLeftButton1" Content="INVENTORY" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleLeftButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="90,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleLeftButton5" Content="REALLY" HorizontalAlignment="Left" Margin="330,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                -->
 
                 <Button x:Name="MiddleCenterButton1" Content="MAP" HorizontalAlignment="Left" Margin="460,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
 
-                <Button x:Name="MiddleRightButton1" Content="LIVIMON" HorizontalAlignment="Left" Margin="910,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleRightButton2" Content="TEAM" HorizontalAlignment="Left" Margin="990,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleRightButton3" Content="INTERACTIONS" HorizontalAlignment="Left" Margin="1070,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleRightButton4" Content="HERE" HorizontalAlignment="Left" Margin="1150,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleRightButton1" Content="PUT" HorizontalAlignment="Left" Margin="830,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleRightButton2" Content="LIVIMON" HorizontalAlignment="Left" Margin="910,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleRightButton3" Content="TEAM" HorizontalAlignment="Left" Margin="990,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleRightButton4" Content="INTERACTIONS" HorizontalAlignment="Left" Margin="1070,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleRightButton5" Content="HERE" HorizontalAlignment="Left" Margin="1150,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
 
                 <Button x:Name="BottomLeftButton1" Content="TALKING" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="BottomLeftButton2" Content="RESPONSES" HorizontalAlignment="Left" Margin="90,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
@@ -198,6 +239,7 @@
                 <Button x:Name="BottomRightButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="990,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="BottomRightButton3" Content="GO" HorizontalAlignment="Left" Margin="1070,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="BottomRightButton4" Content="HERE" HorizontalAlignment="Left" Margin="1150,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <StackPanel HorizontalAlignment="Left" Height="100" Margin="465,265,0,0" VerticalAlignment="Top" Width="100"/>
             </Grid>
         </Viewbox>
     </Border>

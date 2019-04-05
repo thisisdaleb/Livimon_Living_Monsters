@@ -37,7 +37,7 @@ namespace LivimonTestWPF
             biomeList.Add("mountain", new MapTileType("mountain", Brushes.Brown));
 
             //some reasonable value examples are 0.1 for 50 with 9 types, 0.05 for 100,
-            NoiseGenerator noiseGen = new NoiseGenerator(4f/sizeY);
+            NoiseGenerator noiseGen = new NoiseGenerator(0.035f);
 
 
             //DEFINE ELEVATION
@@ -139,19 +139,6 @@ namespace LivimonTestWPF
             return worldMap;
         }
 
-        public int[] getStartingPosition()
-        {
-
-            for (int row = 20; row < sizeY; row++)
-            {
-                for (int col = 0; col < sizeX; col++)
-                {
-                    if(map.map[row, col].getTypeName() == "grassland") return new int[2] { row, col };
-                }
-            }
-            return new int[2] { 0, 0 };
-        }
-
         private MapTile getMapTileForCell(int row, int col)
         {
             //low lying land is a water basin
@@ -192,6 +179,29 @@ namespace LivimonTestWPF
 
             //the world's default ranges make grassland
             return new MapTile(biomeList["grassland"]);
+        }
+
+        public int[] getStartingPosition()
+        {
+            int notWater = 0;
+            for (int row = 0; row < sizeY; row++)
+            {
+                for (int col = 0; col < sizeX; col++)
+                {
+                    if (map.map[row, col].getTypeName() != "water") notWater++;
+                }
+            }
+
+            System.Diagnostics.Debug.WriteLine("not water: " + notWater);
+
+            for (int row = 20; row < sizeY; row++)
+            {
+                for (int col = 0; col < sizeX; col++)
+                {
+                    if (map.map[row, col].getTypeName() == "grassland") return new int[2] { row, col };
+                }
+            }
+            return new int[2] { 0, 0 };
         }
     }
 }
