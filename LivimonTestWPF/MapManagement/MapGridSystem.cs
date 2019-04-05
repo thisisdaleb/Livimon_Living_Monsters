@@ -10,19 +10,22 @@ namespace LivimonTestWPF
 {
     class MapGridSystem
     {
-        Map currentMap;
-        WorldMapManager mainWorldMap;
+        public Map currentMap;
+        public WorldMapManager mainWorldMap;
         int[] playerPosition;
+        bool mapChanged = false;
 
         public MapGridSystem()
         {
-            playerPosition = new int[]{ 20, 20 };
+            playerPosition = new int[]{ 0, 0 };
         }
 
         public void initializeWorldMap()
         {
             mainWorldMap = new WorldMapManager();
             currentMap = mainWorldMap.getMap();
+            playerPosition = mainWorldMap.getStartingPosition();
+            mapChanged = true;
         }
 
         public RectangleUpdate[,] getCurrentMapListView()
@@ -45,36 +48,76 @@ namespace LivimonTestWPF
                     else
                     {
                         MapTile currentMapTile = currentMap.map[currentY, currentX];
-                        newGridView[row + 3, col + 4] = new RectangleUpdate(currentMapTile.getColor());
+                        newGridView[row + 3, col + 4] = new RectangleUpdate(currentMapTile.getColor(), null, currentMapTile.tileUnpassable());
                     }
                 }
             }
             return newGridView;
         }
 
+        private int oldX = 0;
+        private int oldY = 0;
+        public bool getFullMapListNeedsUpdate()
+        {
+            if (!mapChanged) return false;
+            return Math.Round((double)playerPosition[0] / 25) * 25 != oldY || (int)Math.Round((double)playerPosition[1] / 25) * 25 != oldX;
+        }
+
+        private bool worldGenDebug = false;
         public RectangleUpdate[,] getFullMapListView()
         {
-            RectangleUpdate[,] fullMapGrid = new RectangleUpdate[currentMap.map.GetLength(0), currentMap.map.GetLength(1)];
-            for (int row = 0; row < fullMapGrid.GetLength(0); row++)
+            if (worldGenDebug == true)
             {
-                for (int col = 0; col < fullMapGrid.GetLength(1); col++)
+                RectangleUpdate[,] fullMapGrid = new RectangleUpdate[currentMap.map.GetLength(0), currentMap.map.GetLength(1)];
+                for (int row = 0; row < fullMapGrid.GetLength(0); row++)
+                {
+                    for (int col = 0; col < fullMapGrid.GetLength(1); col++)
+                    {
+                        if (row < 0 || row > (currentMap.map.GetLength(0) - 1))
+                        {
+                            fullMapGrid[row, col] = new RectangleUpdate();
+                        }
+                        else if (col < 0 || col > (currentMap.map.GetLength(1) - 1))
+                        {
+                            fullMapGrid[row, col] = new RectangleUpdate();
+                        }
+                        else
+                        {
+                            MapTile currentMapTile = currentMap.map[row, col];
+                            fullMapGrid[row, col] = new RectangleUpdate(currentMapTile.getColor());
+                        }
+                    }
+                }
+                return fullMapGrid;
+            }
+            oldY = (int)Math.Round((double)playerPosition[0] / 25) * 25;
+            oldX = (int)Math.Round((double)playerPosition[1] / 25) * 25;
+            //the mix visible distance is supposed to be
+            int startRow = Math.Max(0, Math.Min(currentMap.map.GetLength(0) - 51, oldY - 25));
+            int startCol = Math.Max(0, Math.Min(currentMap.map.GetLength(1) - 51, oldX - 25));
+            int rowCount = Math.Min(currentMap.map.GetLength(0), 50);
+            int colCount = Math.Min(currentMap.map.GetLength(1), 50);
+            RectangleUpdate[,] miniMapGrid = new RectangleUpdate[rowCount, colCount];
+            for (int row = startRow; row < rowCount + startRow; row++)
+            {
+                for (int col = startCol; col < colCount + startCol; col++)
                 {
                     if (row < 0 || row > (currentMap.map.GetLength(0) - 1))
                     {
-                        fullMapGrid[row, col] = new RectangleUpdate();
+                        miniMapGrid[row - startRow, col - startCol] = new RectangleUpdate();
                     }
                     else if (col < 0 || col > (currentMap.map.GetLength(1) - 1))
                     {
-                        fullMapGrid[row, col] = new RectangleUpdate();
+                        miniMapGrid[row - startRow, col - startCol] = new RectangleUpdate();
                     }
                     else
                     {
                         MapTile currentMapTile = currentMap.map[row, col];
-                        fullMapGrid[row, col] = new RectangleUpdate(currentMapTile.getColor());
+                        miniMapGrid[row - startRow, col - startCol] = new RectangleUpdate(currentMapTile.getColor());
                     }
                 }
             }
-            return fullMapGrid;
+            return miniMapGrid;
         }
 
         internal string getTileName()

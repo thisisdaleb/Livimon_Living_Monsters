@@ -67,6 +67,7 @@ namespace LivimonTestWPF
         }
 
         //https://cmaher.github.io/posts/working-with-simplex-noise/
+        bool octaveDebug = false;
         public float getOctaveRand(int _x, int _y, float _maxValue = 1, int _octaves = 4, float _persistence = 0.5f)
         {
             float maxAmp = 0;
@@ -89,8 +90,32 @@ namespace LivimonTestWPF
             //normalize the result
             noise = noise * _maxValue;
 
+            float newSample = (noise - 0.075f) / 0.85f;
+
+            if (octaveDebug)
+            {
+                if (noise == 0)
+                {
+                    System.Diagnostics.Debug.WriteLine("EVAL 0: X=" + _x + ", Y=" + _y);
+                }
+                if (noise < lowestNum)
+                {
+                    lowestNum = noise;
+                    System.Diagnostics.Debug.WriteLine("Lowest num is " + noise + " === " + "MOD LOW IS " + newSample);
+                }
+                if (noise > largestNum)
+                {
+                    largestNum = noise;
+                    System.Diagnostics.Debug.WriteLine("Largest num is " + noise + " === " + "MOD HIGH is " + newSample);
+                }
+                if (newSample < 0 || newSample > 1)
+                {
+                    throw new ArithmeticException("RANDOM NOISE FAILED " + newSample);
+                }
+            }
+
             //System.Diagnostics.Debug.WriteLine(noise);
-            return noise;
+            return newSample;
         }
         public int getOctaveRandInt(int _x, int _y, int _maxValue = 1, int _octaves = 4, float _persistence = 0.5f)
         {

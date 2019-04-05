@@ -14,11 +14,13 @@ namespace LivimonTestWPF
         private readonly string typeName;
         private string areaName;
         private SolidColorBrush tileColor;
+        private bool isUnpassable = false;
 
-        public MapTile(MapTileDef _tileDef)
+        public MapTile(MapTileType _tileDef)
         {
             typeName = _tileDef.typeName;
             tileColor = _tileDef.primaryColor;
+            isUnpassable = _tileDef.unpassable;
         }
 
         public void setAreaName(string _areaName)
@@ -35,16 +37,28 @@ namespace LivimonTestWPF
         {
             return tileColor;
         }
+
+        public bool tileUnpassable()
+        {
+            return isUnpassable;
+        }
     }
 
-    class MapTileDef
+    class MapTileType
     {
         public string typeName;
         public SolidColorBrush primaryColor;
-        public MapTileDef(string _name, SolidColorBrush _color)
+        public bool unpassable = false;
+
+        public MapTileType(string _name, SolidColorBrush _color)
         {
             typeName = _name;
             primaryColor = _color;
+        }
+
+        public void makeUnpassable()
+        {
+            unpassable = true;
         }
     }
 }

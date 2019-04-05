@@ -36,6 +36,7 @@ namespace LivimonTestWPF
             GUIHandler.setTitle("The World");
             GUIHandler.setMapText(MapSystem.getTileName());
             GUIHandler.setMapGrid(MapSystem.getCurrentMapListView());
+            if(MapSystem.getFullMapListNeedsUpdate()) GUIHandler.setFullMap(MapSystem.getFullMapListView());
 
             GUIHandler.screenUpdatePrepared();
         }

@@ -19,8 +19,9 @@
                 <TextBlock x:Name="TitleText" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="The Dark Forest" VerticalAlignment="Top" FontFamily="Cabin" FontSize="24" Foreground="White"/>
 
                 <!-- INVENTORY BOX -->
-                <Border Name="InventoryBorder"  Background="#FF555555" Margin="10,35,0,0" Width="315" Height="280" HorizontalAlignment="Left"  VerticalAlignment="Top">
-                    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5, 5, 5, 5" Height="270" Width="305">
+                <Border Name="LeftWindowBorder"  Background="#FF555555" Margin="10,35,0,0" Width="395" Height="280" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                <Border Name="FullMapBorder"  Background="#FF222222" Margin="15,40,0,0" Width="235" Height="235" HorizontalAlignment="Left"  VerticalAlignment="Top">
+                    <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="235" Width="235">
                         <!-- <ScrollViewer Height="270" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="305" Background="#FF222222">
                             <TextBlock x:Name="InventoryBlock" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="Potion                                                  x 1" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="275" Foreground="#FFE2E2E2"/>
                         </ScrollViewer> -->
@@ -28,7 +29,11 @@
                         </Grid>
                     </Viewbox>
                 </Border>
-                
+                <Rectangle x:Name="FullMapTextBackground" Margin="15,280,0,0" Width="235" Height="30" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name="FullMapText" HorizontalAlignment="Left" Margin="20,285,0,0" TextWrapping="Wrap" Text="Full Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <Rectangle x:Name="InventoryBackground" Margin="255,40,0,0" Width="145" Height="270" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+
                 <!-- MAP GRID -->
                 <Border Background="#FF555555" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,35,0,0" Width="315" Height="280">
                     <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5, 5, 5, 5">
@@ -167,6 +172,7 @@
                 <Button x:Name="MiddleLeftButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="90,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleLeftButton5" Content="REALLY" HorizontalAlignment="Left" Margin="330,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
 
                 <Button x:Name="MiddleCenterButton1" Content="MAP" HorizontalAlignment="Left" Margin="460,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
