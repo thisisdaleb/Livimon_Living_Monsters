@@ -90,9 +90,10 @@ namespace LivimonTestWPF
                 }
                 return fullMapGrid;
             }
+
             oldY = (int)Math.Round((double)playerPosition[0] / 25) * 25;
             oldX = (int)Math.Round((double)playerPosition[1] / 25) * 25;
-            //the mix visible distance is supposed to be
+
             int startRow = Math.Max(0, Math.Min(currentMap.map.GetLength(0) - 51, oldY - 25));
             int startCol = Math.Max(0, Math.Min(currentMap.map.GetLength(1) - 51, oldX - 25));
             int rowCount = Math.Min(currentMap.map.GetLength(0), 50);
