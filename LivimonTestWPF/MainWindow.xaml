@@ -15,7 +15,15 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock x:Name="TitleText" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="The Dark Forest" VerticalAlignment="Top" FontFamily="Cabin" FontSize="24" Foreground="White"/>
+                <!-- Fun Border Style -->
+                <Border Name="BorderBorderColor" Background="White" Width="1227" Height="627" Margin="4,29,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Border Name="BorderColor"    Background="Gray" Width="1223" Height="623" Margin="6,31,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Border Name="BottomLeftLine" Background="White" Width="450" Height="2" Margin="5,502,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Border Name="TopRightLine"   Background="White" Width="2" Height="321" Margin="779,29,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Border Name="VerticalLine"   Background="White" Width="2" Height="627" Margin="454,29,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Border Name="MiddleLine"     Background="White" Width="1225" Height="2" Margin="5,349,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <TextBlock x:Name="TitleText" HorizontalAlignment="Left" Margin="10,-2,0,0" TextWrapping="Wrap" Text="The Dark Forest" VerticalAlignment="Top" FontFamily="Cabin" FontSize="24" Foreground="White"/>
 
                 <!-- INVENTORY BOX -->
                 <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" Height="310" Margin="785,35,0,0">
@@ -86,7 +94,7 @@
 
 
                 <!-- MAP GRID -->
-                <Border Background="#FF555555" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,35,0,0" Width="315" Height="285">
+                <Border Background="#FF555555" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,35,0,0" Width="315" Height="310">
                     <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5, 5, 0, 0" Width="305" Height="240">
                         <Grid Name="MapGrid" Background="#FF222222" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320" Height="250">
                             <Rectangle Name="MapCellRow0Col0" Width="30" Height="30" Fill="Gray"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
@@ -167,9 +175,14 @@
                         </Grid>
                     </Viewbox>
                 </Border>
-                <Rectangle Name="MapTextBackground" Margin="465,282,0,0" Width="305" Height="35" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBlock x:Name="MapText" HorizontalAlignment="Left" Margin="470,289,0,0" TextWrapping="Wrap" Text="Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
-
+                <Rectangle Name="MapTextBackground" Margin="465,285,0,0" Width="305" Height="55" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name="MapText" HorizontalAlignment="Left" Margin="470,290,0,0" TextWrapping="Wrap" Text="Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                
+                <Button x:Name="MapButton1" Content="MAP" HorizontalAlignment="Left" Margin="472.5,315,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="MapButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="547.5,315,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="MapButton3" Content="GO" HorizontalAlignment="Left" Margin="622.5,315,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="MapButton4" Content="HERE" HorizontalAlignment="Left" Margin="697.5,315,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                
                 <!-- PARTY BOX -->
                 <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" Height="310" Margin="10,35,0,0">
                     <Rectangle Name="TeamBorder" Margin="0,0,0,0" Width="440" Height="310" Fill="#FF555555"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -206,25 +219,25 @@
                 </Canvas>
 
                 <!-- INFO BOX -->
-                <Border Background="#FF555555" Margin="10,355,0,0" Width="440" Height="145" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Border Background="#FF555555" Margin="10,355,0,0" Width="440" Height="142.5" VerticalAlignment="Top" HorizontalAlignment="Left">
                 </Border>
                 <!-- NEARBY POINTS OF INTEREST BOX -->
-                <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="145" Margin="10,355,0,0">
-                    <Border Background="#FF222222" Margin="5,5,0,0" Width="210" Height="135" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="142.5" Margin="10,355,0,0">
+                    <Border Background="#FF222222" Margin="5,5,0,0" Width="210" Height="132.5" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                     <TextBlock x:Name="PeopleLabel" HorizontalAlignment="Left" Margin="10,5,5,5" TextWrapping="Wrap" Text="Nearby People" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="200" Foreground="#FFE2E2E2"/>
-                    <TextBlock x:Name="Person1" HorizontalAlignment="Left" Margin="20,25,5,5" TextWrapping="Wrap" Text="- Mr. Real Man" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="200" Foreground="#FFE2E2E2"/>
+                    <TextBlock x:Name="Person1" HorizontalAlignment="Left" Margin="20,30,5,5" TextWrapping="Wrap" Text="- Mr. Real Man" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="200" Foreground="#FFE2E2E2"/>
                 </Canvas>
 
                 <!-- IMMEDIATE WARNINGS BOX -->
-                <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="145" Margin="230,355,0,0">
-                    <Border Background="#FF222222" Margin="5,5,0,0" Width="210" Height="135" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="220" Height="142.5" Margin="230,355,0,0">
+                    <Border Background="#FF222222" Margin="5,5,0,0" Width="210" Height="132.5" VerticalAlignment="Top" HorizontalAlignment="Left">
                     </Border>
                     <TextBlock x:Name="WarningLabel" HorizontalAlignment="Left" Margin="10,5,5,5" TextWrapping="Wrap" Text="Warnings" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="200" Foreground="#FFE2E2E2"/>
-                    <TextBlock x:Name="Warning1" HorizontalAlignment="Left" Margin="20,25,5,5" TextWrapping="Wrap" Text="- No warnings" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="200" Foreground="#FFE2E2E2"/>
+                    <TextBlock x:Name="Warning1" HorizontalAlignment="Left" Margin="20,30,5,5" TextWrapping="Wrap" Text="- No warnings" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="200" Foreground="#FFE2E2E2"/>
                 </Canvas>
 
                 <!-- ACTIONS BOX -->
-                <Border Background="#FF555555" Margin="10,505,0,0" Width="440" Height="145" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Border Background="#FF555555" Margin="10,507.5,0,0" Width="440" Height="142.5" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" Height="145" Margin="5,5,5,5">
                         <Border Background="#FF222222" Margin="0,0,0,0" Width="430" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left">
                             <TextBlock x:Name="ActionsLabel" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="Actions" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="200" Foreground="#FFE2E2E2"/>
@@ -269,11 +282,11 @@
                 </Border>
 
                 <!-- THE 25+ buttons -->
-                <Button x:Name="CloseSave" Content="New Game" HorizontalAlignment="Left" Margin="1150,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="NewSave" Content="Make Save" HorizontalAlignment="Left" Margin="1070,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="SaveFile" Content="Overwrite Save" HorizontalAlignment="Left" Margin="990,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="LoadFile" Content="Load Save" HorizontalAlignment="Left" Margin="910,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="Options" Content="Options" HorizontalAlignment="Left" Margin="830,10,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="CloseSave" Content="New Game" HorizontalAlignment="Left" Margin="1150,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="NewSave" Content="Make Save" HorizontalAlignment="Left" Margin="1070,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="SaveFile" Content="Overwrite Save" HorizontalAlignment="Left" Margin="990,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="LoadFile" Content="Load Save" HorizontalAlignment="Left" Margin="910,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="Options" Content="Options" HorizontalAlignment="Left" Margin="830,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
 
                 <!-- UNUSED INVENTORY BUTTONS
                 <Button x:Name="MiddleLeftButton1" Content="INVENTORY" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
@@ -281,13 +294,12 @@
                 <Button x:Name="MiddleLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleLeftButton5" Content="REALLY" HorizontalAlignment="Left" Margin="330,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                -->
-                <Button x:Name="MiddleCenterButton1" Content="MAP" HorizontalAlignment="Left" Margin="460,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
 
-                <!--
+                <Button x:Name="MiddleCenterButton1" Content="MAP" HorizontalAlignment="Left" Margin="460,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="MiddleCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+
                 <Button x:Name="MiddleRightButton1" Content="PUT" HorizontalAlignment="Left" Margin="830,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleRightButton2" Content="LIVIMON" HorizontalAlignment="Left" Margin="910,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="MiddleRightButton3" Content="TEAM" HorizontalAlignment="Left" Margin="990,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
