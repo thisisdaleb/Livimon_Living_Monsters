@@ -109,6 +109,7 @@ namespace LivimonTestWPF
                 if(!currentlyUpdatingGUI) gameLogic.runLogicUpdate(); //This may not be needed, except as per the idea of updating text over time
             }
         }
+
         /*
            _____ _    _ _____    ________      ________ _   _ _______    _    _          _   _ _____  _      ______ _____   _____ 
           / ____| |  | |_   _|  |  ____\ \    / /  ____| \ | |__   __|  | |  | |   /\   | \ | |  __ \| |    |  ____|  __ \ / ____|
@@ -154,6 +155,7 @@ namespace LivimonTestWPF
           \_____|\____/|_____|  |_____/|_|  \_\/_/    \_\/  \/      |_|     \____/|_| \_|\_____|  |_|  |_____\____/|_| \_|_____/ 
 
         */
+
         //consider rewriting this to use onPropertyChanged(?) so people don't laugh at bad code
         //15ms = 60 frames per second, but don't expect that to actually be 60, it could take an extra frame to update
         private void runGuiUpdate()

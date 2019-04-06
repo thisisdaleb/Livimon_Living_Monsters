@@ -68,6 +68,8 @@ namespace LivimonTestWPF
         {
             if (worldGenDebug == true)
             {
+                mapChanged = false;
+
                 RectangleUpdate[,] fullMapGrid = new RectangleUpdate[currentMap.map.GetLength(0), currentMap.map.GetLength(1)];
                 for (int row = 0; row < fullMapGrid.GetLength(0); row++)
                 {

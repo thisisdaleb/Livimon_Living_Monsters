@@ -12,8 +12,8 @@ namespace LivimonTestWPF
         //is it still cool?
 
         //Map map;
-        private static int sizeX = 100;
-        private static int sizeY = sizeX;
+        private static int sizeX = 150;
+        private static int sizeY = 100;
 
         private float[,] elevationGrid;
         private float[,] percipitationGrid;
@@ -48,7 +48,7 @@ namespace LivimonTestWPF
             {
                 for (int col = 0; col < sizeX; col++)
                 {
-                    float multiplier = 1f;
+                    float multiplier = 1.1f;
                     int percent25 = sizeX / 5;
 
                     //making both sides the same halves the if statements
