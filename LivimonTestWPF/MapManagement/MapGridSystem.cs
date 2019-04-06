@@ -63,7 +63,7 @@ namespace LivimonTestWPF
             return Math.Round((double)playerPosition[0] / 25) * 25 != oldY || (int)Math.Round((double)playerPosition[1] / 25) * 25 != oldX;
         }
 
-        private bool worldGenDebug = false;
+        private bool worldGenDebug = true;
         public RectangleUpdate[,] getFullMapListView()
         {
             if (worldGenDebug == true)

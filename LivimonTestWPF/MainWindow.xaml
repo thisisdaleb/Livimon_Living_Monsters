@@ -188,7 +188,9 @@
                 <TextBlock x:Name="member2Needs1" HorizontalAlignment="Left" Margin="1015,135,0,0" TextWrapping="Wrap" Text="Healthy" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
                 <TextBlock x:Name="member2Needs2" HorizontalAlignment="Left" Margin="1015,155,0,0" TextWrapping="Wrap" Text="Slightly bored" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
 
-                <Rectangle Name="Team3Background" Margin="835,180,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <!-- <Rectangle Name="Team3Background" Margin="835,180,0,0" Width="0" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/> -->
+                <Rectangle Name="Team3aBackground" Margin="1030,180,0,0" Width="190" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Rectangle Name="Team3bBackground" Margin="835,180,0,0" Width="190" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Rectangle Name="Team4Background" Margin="835,225,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Rectangle Name="Team5Background" Margin="835,270,0,0" Width="385" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
@@ -235,11 +237,11 @@
                 <Button x:Name="BottomCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
                 <Button x:Name="BottomCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
 
-                <Button x:Name="BottomRightButton1" Content="SELF" HorizontalAlignment="Left" Margin="910,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomRightButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="990,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomRightButton3" Content="GO" HorizontalAlignment="Left" Margin="1070,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomRightButton4" Content="HERE" HorizontalAlignment="Left" Margin="1150,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <StackPanel HorizontalAlignment="Left" Height="100" Margin="465,265,0,0" VerticalAlignment="Top" Width="100"/>
+                <Button x:Name="BottomRightButton1" Content="THE" HorizontalAlignment="Left" Margin="830,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomRightButton2" Content="SELF" HorizontalAlignment="Left" Margin="910,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomRightButton3" Content="ACTIONS" HorizontalAlignment="Left" Margin="990,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomRightButton4" Content="GO" HorizontalAlignment="Left" Margin="1070,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                <Button x:Name="BottomRightButton5" Content="HERE" HorizontalAlignment="Left" Margin="1150,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
             </Grid>
         </Viewbox>
     </Border>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace LivimonTestWPF
 
         public NoiseGenerator(int _seed, float _frequency = 0.5f)
         {
-            System.Diagnostics.Debug.WriteLine("Seed: " + _seed);
+            Console.log("Seed: " + _seed);
             frequency = _frequency;
             simplex = new SimplexNoiseGenerator(_seed);
         }
@@ -23,7 +24,7 @@ namespace LivimonTestWPF
         public NoiseGenerator(float _frequency = 0.5f)
         {
             int seed = (new Random()).Next(int.MinValue, int.MaxValue);
-            System.Diagnostics.Debug.WriteLine("Random Seed: " + seed);
+            Console.log("Random Seed: " + seed);
             frequency = _frequency;
             simplex = new SimplexNoiseGenerator(seed);
         }
@@ -31,6 +32,8 @@ namespace LivimonTestWPF
         public double lowestNum = 1f;
         public double largestNum = -1f;
         public bool debugging = false;
+        public int amountRun = 0;
+        Stopwatch stopwatch;
 
         //simplex does not return full values between -1 and 1, somewhere around -0.864 and 0.864
         //my values here return between around 0.006 and 0.994
@@ -42,26 +45,44 @@ namespace LivimonTestWPF
             }
             else
             {
+
+                if (amountRun == 0)
+                {
+
+                    stopwatch = Stopwatch.StartNew(); //creates and start the instance of Stopwatch
+                                                      //your sample code
+                }
+                else stopwatch.Start();
+
                 double eval = simplex.Evaluate(_x, _y);
                 double newSample = (eval + 0.875) / 1.75;
                 if (eval == 0)
                 {
-                    System.Diagnostics.Debug.WriteLine("EVAL 0: X=" + _x + ", Y=" + _y);
+                    Console.log("EVAL 0: X=" + _x + ", Y=" + _y);
                 }
                 if (eval < lowestNum)
                 {
                     lowestNum = eval;
-                    System.Diagnostics.Debug.WriteLine("Lowest num is " + eval + " === " + "MOD LOW IS " + newSample);
+                    Console.log("Lowest num is " + eval + " === " + "MOD LOW IS " + newSample);
                 }
                 if (eval > largestNum)
                 {
                     largestNum = eval;
-                    System.Diagnostics.Debug.WriteLine("Largest num is " + eval + " === " + "MOD HIGH is " + newSample);
+                    Console.log("Largest num is " + eval + " === " + "MOD HIGH is " + newSample);
                 }
                 if (newSample < 0 || newSample > 1)
                 {
                     throw new ArithmeticException("RANDOM NOISE FAILED " + newSample);
                 }
+
+                amountRun++;
+
+                stopwatch.Stop();
+                if (amountRun == 120000)
+                {
+                    Console.log("time to get 120000: " + stopwatch.ElapsedMilliseconds);
+                }
+
                 return (float) newSample;
             }
         }
@@ -96,17 +117,17 @@ namespace LivimonTestWPF
             {
                 if (noise == 0)
                 {
-                    System.Diagnostics.Debug.WriteLine("EVAL 0: X=" + _x + ", Y=" + _y);
+                    Console.log("EVAL 0: X=" + _x + ", Y=" + _y);
                 }
                 if (noise < lowestNum)
                 {
                     lowestNum = noise;
-                    System.Diagnostics.Debug.WriteLine("Lowest num is " + noise + " === " + "MOD LOW IS " + newSample);
+                    Console.log("Lowest num is " + noise + " === " + "MOD LOW IS " + newSample);
                 }
                 if (noise > largestNum)
                 {
                     largestNum = noise;
-                    System.Diagnostics.Debug.WriteLine("Largest num is " + noise + " === " + "MOD HIGH is " + newSample);
+                    Console.log("Largest num is " + noise + " === " + "MOD HIGH is " + newSample);
                 }
                 if (newSample < 0 || newSample > 1)
                 {
@@ -114,7 +135,7 @@ namespace LivimonTestWPF
                 }
             }
 
-            //System.Diagnostics.Debug.WriteLine(noise);
+            //Console.log(noise);
             return newSample;
         }
         public int getOctaveRandInt(int _x, int _y, int _maxValue = 1, int _octaves = 4, float _persistence = 0.5f)

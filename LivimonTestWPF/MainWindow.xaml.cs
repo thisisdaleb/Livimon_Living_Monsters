@@ -47,7 +47,7 @@ namespace LivimonTestWPF
             DataContext = this;
             InitializeSystem();
             textBlock.Text = "This will contain a description of your surroundings, actions performed by your livimon, dialog from NPCs, combat events, queries asking you what to do next, or general story text.";
-            
+
             Thread logicThread = new Thread(runLogicUpdate);
             logicThread.IsBackground = true;
             logicThread.Start();
@@ -122,7 +122,7 @@ namespace LivimonTestWPF
         private void click_buttonPressed(object sender, RoutedEventArgs e)
         {
             Button clicked = (Button)sender;
-            System.Diagnostics.Debug.WriteLine(clicked.Name);
+            Console.log(clicked.Name);
         }
 
         private void MouseUp_PlayerCell(object sender, RoutedEventArgs e)
@@ -160,7 +160,7 @@ namespace LivimonTestWPF
         {
             while (true)
             {
-                Thread.Sleep(15); 
+                Thread.Sleep(5); 
                 Dispatcher.Invoke(() =>
                 {
                     if (GUIHandler.isReadyToUpdate())

@@ -33,7 +33,7 @@ namespace LivimonTestWPF
             biomeList.Add("grassland", new MapTileType("grassland", Brushes.Lime));
             biomeList.Add("forest", new MapTileType("forest", Brushes.Green));
             biomeList.Add("desert", new MapTileType("desert", Brushes.Yellow));
-            biomeList.Add("tundra", new MapTileType("tundra", Brushes.White));
+            biomeList.Add("snowy_plains", new MapTileType("snowy plains", Brushes.White));
             biomeList.Add("mountain", new MapTileType("mountain", Brushes.Brown));
 
             //some reasonable value examples are 0.1 for 50 with 9 types, 0.05 for 100,
@@ -44,33 +44,20 @@ namespace LivimonTestWPF
             Stopwatch stopwatch = Stopwatch.StartNew(); //creates and start the instance of Stopwatch
                                                         //your sample code
             elevationGrid = new float[sizeY, sizeX];
-            float[] nearEdgeList = { 0f, 0.2f, 0.4f, 0.6f, 0.8f, 1f };
             for (int row = 0; row < sizeY; row++)
             {
                 for (int col = 0; col < sizeX; col++)
                 {
-                    float rowMult = 1f;
-                    if (row < 5) rowMult = nearEdgeList[row];
-                    if (row > (sizeY - 6)) rowMult = nearEdgeList[sizeY - 1 - row];
-
-                    float colMult = 1f;
-                    if (col < 5) colMult = nearEdgeList[col];
-                    if (col > (sizeX - 6)) colMult = nearEdgeList[sizeX - 1 - col];
-
-                    //okay, now to try something weird
-                    //if row and col are within 25% to 75% of matrix size, don't change anything
-                    //else if col within range, just get row distance and do math so that the edge tile is 100% water and it scales up to no change
-                    //else if row etc.
-                    //else if (this means we're on a corner tile), find the distance to the corner of the 25-75%, that's your multiplier
                     float multiplier = 1f;
-                    int percent25 = sizeX / 4;
-                    //making both sides the same halves the if statements
-                    int distanceToVerticWall = row < percent25 ? row : sizeY - 1 - row;
-                    int distanceToHorizWall = col < percent25 ? col : sizeX - 1 - col;
+                    int percent25 = sizeX / 5;
 
-                    //if(row < percent25 || row > percent75)
-                    //    if (col < percent25 || col > percent75)
-                    if(distanceToVerticWall == 0 || distanceToHorizWall == 0)
+                    //making both sides the same halves the if statements
+                    int distanceToVerticWall = row < sizeY/2 ? row : sizeY - 1 - row;
+                    int distanceToHorizWall = col < sizeX/2  ? col : sizeX - 1 - col;
+                    //int distanceToVerticCenter = Math.Abs(sizeY / 2 - row);
+                    //int distanceToHorizCenter  = Math.Abs(sizeX / 2 - col);
+
+                    if (distanceToVerticWall == 0 || distanceToHorizWall == 0)
                     {
                         multiplier = 0;
                     }
@@ -88,13 +75,13 @@ namespace LivimonTestWPF
                         else
                         {
                             //top and bottom walls
-                            multiplier = (float)(distanceToVerticWall) / percent25; //completely linear
+                            multiplier = (float)(distanceToVerticWall) / percent25;
                         }
                     }
                     else if (distanceToHorizWall < percent25)
                     {
                         //left and right walls
-                        multiplier = (float)(distanceToHorizWall) / percent25; //completely linear
+                        multiplier = (float)(distanceToHorizWall) / percent25;
                     }
 
                     elevationGrid[row, col] = noiseGen.getOctaveRand(row + 1000, col + 1000, 1f, 4, 0.5f) * multiplier;
@@ -134,7 +121,7 @@ namespace LivimonTestWPF
             }
 
             stopwatch.Stop();
-            Console.WriteLine(stopwatch.ElapsedMilliseconds);
+            Console.log("Time to make world: " + stopwatch.ElapsedMilliseconds + " ms");
 
             return worldMap;
         }
@@ -169,7 +156,7 @@ namespace LivimonTestWPF
             //low temps causes snow
             if (temperatureGrid[row, col] < 0.32)
             {
-                return new MapTile(biomeList["tundra"]);
+                return new MapTile(biomeList["snowy_plains"]);
             }
             //a good amount of rain makes a forest
             if (percipitationGrid[row, col] > 0.6)
@@ -192,7 +179,7 @@ namespace LivimonTestWPF
                 }
             }
 
-            System.Diagnostics.Debug.WriteLine("not water: " + notWater);
+            Console.log("Percent tiles not water: " + notWater*100/(sizeX*sizeY) + "%");
 
             for (int row = 20; row < sizeY; row++)
             {
