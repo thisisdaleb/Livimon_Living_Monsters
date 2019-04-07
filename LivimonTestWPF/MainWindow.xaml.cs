@@ -46,7 +46,7 @@ namespace LivimonTestWPF
             InitializeComponent();
             DataContext = this;
             InitializeSystem();
-            textBlock.Text = "This will contain a description of your surroundings, actions performed by your livimon, dialog from NPCs, combat events, queries asking you what to do next, or general story text.";
+            //MainText.Text = "This will contain a description of your surroundings, actions performed by your livimon, dialog from NPCs, combat events, queries asking you what to do next, or general story text.";
 
             Thread logicThread = new Thread(runLogicUpdate);
             logicThread.IsBackground = true;
@@ -162,7 +162,7 @@ namespace LivimonTestWPF
         {
             while (true)
             {
-                Thread.Sleep(5); 
+                Thread.Sleep(255); 
                 Dispatcher.Invoke(() =>
                 {
                     if (GUIHandler.isReadyToUpdate())
@@ -188,7 +188,7 @@ namespace LivimonTestWPF
 
         private void updateDescription()
         {
-            if (GUIHandler.descriptionChanged()) textBlock.Text = GUIHandler.getDescription();
+            if (GUIHandler.descriptionChanged()) MainText.Text = GUIHandler.getDescription();
         }
 
         private void updateTitle()

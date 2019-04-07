@@ -32,7 +32,7 @@ namespace LivimonTestWPF
 
         public void runFullGUIUpdate()
         {
-            GUIHandler.setDescription("You are wandering the world... ");
+            //GUIHandler.setDescription("You are wandering the world... ");
             GUIHandler.setTitle("Livimon");
             GUIHandler.setMapText(MapSystem.getTileName());
             GUIHandler.setMapGrid(MapSystem.getCurrentMapListView());
