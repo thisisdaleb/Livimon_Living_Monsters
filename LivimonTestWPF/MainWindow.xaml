@@ -78,7 +78,7 @@
                         </Canvas>
                     </Border>
                     <Border Name="InventoryPagesBorder"  Background="#FF222222" Margin="395,5,0,0" Width="40" Height="190" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
-                    <Button x:Name="InvPageItems1" Content="PG 1" Margin="400,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                    <Button x:Name="InvPageItems1" Content="PG 1" Margin="400,15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed" Background="Gray"/>
                     <Button x:Name="InvPageItems2" Content="PG 2" Margin="400,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
                     <Button x:Name="InvPageItems3" Content="PG 3" Margin="400,65,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
                     <Button x:Name="InvPageItems4" Content="PG 4" Margin="400,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
@@ -91,8 +91,8 @@
                             <Grid Name="QuestGrid" Background="#FF222222" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <TextBlock x:Name="MainQuestText" HorizontalAlignment="Left" Margin="5,5,0,0" TextWrapping="Wrap" Text="Main Quest: Find Livimon to join your party" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
                                 <TextBlock x:Name="SideQuest1Text" HorizontalAlignment="Left" Margin="5,30,0,0" TextWrapping="Wrap" Text="Side Quest: Explore the world" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
-                                <TextBlock x:Name="SideQuest2Text" HorizontalAlignment="Left" Margin="5,55,0,0" TextWrapping="Wrap" Text="Side Quest: Help Supa find his inner strength" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
-                                <TextBlock x:Name="SideQuest3Text" HorizontalAlignment="Left" Margin="5,80,0,0" TextWrapping="Wrap" Text="Side Quest: Help Elle train her swimming speed" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
+                                <TextBlock x:Name="SideQuest2Text" HorizontalAlignment="Left" Margin="5,55,0,0" TextWrapping="Wrap" Text="Livimon Quest: Help Supa find his inner strength" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
+                                <TextBlock x:Name="SideQuest3Text" HorizontalAlignment="Left" Margin="5,80,0,0" TextWrapping="Wrap" Text="Livimon Quest: Help Elle train her swimming speed" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
                                 <TextBlock x:Name="SideQuest4Text" HorizontalAlignment="Left" Margin="5,105,0,0" TextWrapping="Wrap" Text="Side Quest: Help child find their lost balloon" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="350" Foreground="#FFE2E2E2"/>
                             </Grid>
                         </ScrollViewer>
@@ -101,7 +101,7 @@
                     <Button x:Name="QuestPageMain" Content="MAIN" HorizontalAlignment="Left" Margin="400,205,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
                     <Button x:Name="QuestPageSide" Content="SIDE" HorizontalAlignment="Left" Margin="400,230,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
                     <Button x:Name="QuestPageMons" Content="MONS" HorizontalAlignment="Left" Margin="400,255,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
-                    <Button x:Name="QuestPageDone" Content="DONE" HorizontalAlignment="Left" Margin="400,280,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                    <Button x:Name="QuestPageDone" Content="DONE" HorizontalAlignment="Left" Margin="400,280,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed" Background="Gray"/>
                 </Canvas>
 
 
@@ -188,12 +188,15 @@
                     </Viewbox>
                 </Border>
                 <Rectangle Name="MapTextBackground" Margin="465,285,0,0" Width="305" Height="55" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBlock x:Name="MapText" HorizontalAlignment="Left" Margin="470,290,0,0" TextWrapping="Wrap" Text="Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="MapText"  HorizontalAlignment="Left" Margin="470,290,0,0" TextWrapping="Wrap" Text="Map Info Here" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
+                <TextBlock x:Name="MapText2" HorizontalAlignment="Left" Margin="470,315,0,0" TextWrapping="Wrap" Text="No civilizations nearby" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White"/>
 
+                <!-- I can't think of any purpose for the map buttons
                 <Button x:Name="MapButton1" Content="MAP" HorizontalAlignment="Left" Margin="472.5,315,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
                 <Button x:Name="MapButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="547.5,315,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
                 <Button x:Name="MapButton3" Content="GO" HorizontalAlignment="Left" Margin="622.5,315,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
                 <Button x:Name="MapButton4" Content="HERE" HorizontalAlignment="Left" Margin="697.5,315,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                -->
 
                 <!-- PARTY BOX -->
                 <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" Height="310" Margin="10,35,0,0">
@@ -207,24 +210,25 @@
                     <Rectangle Name="Team5Background" Width="210" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="5" Canvas.Top="265"/>
                     <Rectangle Name="Team6Background" Width="210" Height="40" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="225" Canvas.Top="265"/>
 
-                    <Rectangle Name="currentMemberBackground" Width="430" Height="165" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="5" Canvas.Top="5"/>
+                    <Rectangle Name="CurrentMemberBackground" Width="430" Height="165" Fill="#FF222222"  HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="5" Canvas.Top="5"/>
 
-                    <!-- will be removed, just for testing -->
-                    <TextBlock x:Name="member1Species" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dakecko" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="10" Canvas.Top="175"/>
-                    <TextBlock x:Name="member1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Supa" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="10" Canvas.Top="195"/>
-                    <TextBlock x:Name="member1Type" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Flame" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="95" Canvas.Top="175"/>
-                    <TextBlock x:Name="member1Lvl" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Lvl 8" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="95" Canvas.Top="195"/>
+                    <TextBlock x:Name="Member1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Supa"  VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="10" Canvas.Top="175"/>
+                    <TextBlock x:Name="Member1Type" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Flame" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="10" Canvas.Top="195"/>
+                    <TextBlock x:Name="Member1HP"   HorizontalAlignment="Left" TextWrapping="Wrap" Text="46/46 HP" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="125" Canvas.Top="175"/>
+                    <TextBlock x:Name="Member1Lvl"  HorizontalAlignment="Left" TextWrapping="Wrap" Text="Lvl 8" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="125" Canvas.Top="195"/>
 
-                    <TextBlock x:Name="member2Species" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Eludano" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="230" Canvas.Top="175"/>
-                    <TextBlock x:Name="member2Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Elle" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="230" Canvas.Top="195"/>
-                    <TextBlock x:Name="member2Type" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Water" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="315" Canvas.Top="175"/>
-                    <TextBlock x:Name="member2Lvl" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Lvl 7" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="315" Canvas.Top="195"/>
+                    <TextBlock x:Name="Member2Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Elle"  VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="230" Canvas.Top="175"/>
+                    <TextBlock x:Name="Member2Type" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Mystic/Fighting" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="230" Canvas.Top="195"/>
+                    <TextBlock x:Name="MemberHP"    HorizontalAlignment="Left" TextWrapping="Wrap" Text="58/72 HP" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="345" Canvas.Top="175"/>
+                    <TextBlock x:Name="Member2Lvl"  HorizontalAlignment="Left" TextWrapping="Wrap" Text="Lvl 7" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="345" Canvas.Top="195"/>
 
-                    <TextBlock x:Name="LivimonLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Livimon Info" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Foreground="White" Canvas.Left="10" Canvas.Top="5"/>
-                    <TextBlock x:Name="currentSpecies" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dakecko" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="20" Canvas.Top="25"/>
-                    <TextBlock x:Name="currentName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Supa" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="20" Canvas.Top="45"/>
-                    <TextBlock x:Name="currentType" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Flame" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="105" Canvas.Top="25"/>
-                    <TextBlock x:Name="currentLevel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Lvl 8" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Foreground="White" Canvas.Left="105" Canvas.Top="45"/>
+                    <TextBlock x:Name="CurrentLivimonNickname" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Supa" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Foreground="White" Canvas.Left="10" Canvas.Top="5"/>
+                    <TextBlock x:Name="SpeciesLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Species" VerticalAlignment="Top" FontFamily="Cabin" FontSize="14" Foreground="White" Canvas.Left="10" Canvas.Top="25"/>
+                    <TextBlock x:Name="CurrentSpeciesName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Dakecko  ♂" VerticalAlignment="Top" FontFamily="Cabin" FontSize="14" Foreground="White" Canvas.Left="65" Canvas.Top="25"/>
+                    <TextBlock x:Name="TypeLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top" FontFamily="Cabin" FontSize="14" Foreground="White" Canvas.Left="10" Canvas.Top="40"/>
+                    <TextBlock x:Name="CurrentMonType" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Flame" VerticalAlignment="Top" FontFamily="Cabin" FontSize="14" Foreground="White" Canvas.Left="65" Canvas.Top="40"/>
+                    <TextBlock x:Name="HealthLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Health" VerticalAlignment="Top" FontFamily="Cabin" FontSize="14" Foreground="White" Canvas.Left="10" Canvas.Top="55"/>
+                    <TextBlock x:Name="CurrentMonHealth" HorizontalAlignment="Left" TextWrapping="Wrap" Text="46/46" VerticalAlignment="Top" FontFamily="Cabin" FontSize="14" Foreground="White" Canvas.Left="65" Canvas.Top="55"/>
 
                     <Border Background="Transparent" BorderBrush="#555555" BorderThickness="3" Margin="10,75,0,0" Width="210" Height="90" VerticalAlignment="Top" HorizontalAlignment="Left">
                         <ScrollViewer Height="84" Margin="0,0,0,0" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="1" Grid.RowSpan="1" HorizontalAlignment="Left" Width="202" Background="#FF222222">
@@ -249,7 +253,7 @@
 
                     <Button x:Name="LivimonTalk" Content="Talk" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed" Canvas.Left="225" Canvas.Top="145"/>
                     <Button x:Name="LivimonTrain" Content="Train" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed" Canvas.Left="295" Canvas.Top="145"/>
-                    <Button x:Name="Livimon" Content="Read Journal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed" Canvas.Left="365" Canvas.Top="145"/>
+                    <Button x:Name="Livimon" Content="Journal Entry" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed" Canvas.Left="365" Canvas.Top="145"/>
                 </Canvas>
 
                 <!-- INFO BOX -->
@@ -274,206 +278,48 @@
                 <Border Background="#FF555555" Margin="10,505,0,0" Width="440" Height="145" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="440" Height="145" Margin="5,5,5,5">
                         <Border Background="#FF222222" Margin="0,0,0,0" Width="430" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left">
-                            <TextBlock x:Name="ActionsLabel" HorizontalAlignment="Left" Margin="5,5,5,5" TextWrapping="Wrap" Text="Actions" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="200" Foreground="#FFE2E2E2"/>
+                            <TextBlock x:Name="ActionsLabel" HorizontalAlignment="Left" Margin="10,5,0,0" TextWrapping="Wrap" Text="Actions" VerticalAlignment="Top" FontFamily="Cabin" FontSize="18" Width="60" Foreground="#FFE2E2E2" Height="20"/>
                         </Border>
                         <Border Background="#FF222222" Margin="0,35,0,0" Width="430" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left">
-                            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="420" Height="91" Margin="5,4.5,5,4.5">
-                                <!-- ACTION ROW 1 -->
-                                <Button x:Name="ActionButtonRow0Col0" Content="ACTION 00" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow0Col1" Content="ACTION 01" HorizontalAlignment="Left" Margin="85,0,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow0Col2" Content="ACTION 02" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow0Col3" Content="ACTION 03" HorizontalAlignment="Left" Margin="255,0,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow0Col4" Content="ACTION 04" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <!-- ACTION ROW 1 -->
-                                <Button x:Name="ActionButtonRow1Col0" Content="ACTION 10" HorizontalAlignment="Left" Margin="0,24,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow1Col1" Content="ACTION 11" HorizontalAlignment="Left" Margin="85,24,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow1Col2" Content="ACTION 11" HorizontalAlignment="Left" Margin="170,24,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow1Col3" Content="ACTION 11" HorizontalAlignment="Left" Margin="255,24,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow1Col4" Content="ACTION 11" HorizontalAlignment="Left" Margin="340,24,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <!-- ACTION ROW 2 -->
-                                <Button x:Name="ActionButtonRow2Col0" Content="ACTION 20" HorizontalAlignment="Left" Margin="0,48,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow2Col1" Content="ACTION 21" HorizontalAlignment="Left" Margin="85,48,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow2Col2" Content="ACTION 22" HorizontalAlignment="Left" Margin="170,48,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow2Col3" Content="ACTION 23" HorizontalAlignment="Left" Margin="255,48,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow2Col4" Content="ACTION 24" HorizontalAlignment="Left" Margin="340,48,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <!-- ACTION ROW 3 -->
-                                <Button x:Name="ActionButtonRow3Col0" Content="ACTION 30" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow3Col1" Content="ACTION 31" HorizontalAlignment="Left" Margin="85,72,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow3Col2" Content="ACTION 32" HorizontalAlignment="Left" Margin="170,72,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow3Col3" Content="ACTION 33" HorizontalAlignment="Left" Margin="255,72,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                                <Button x:Name="ActionButtonRow3Col4" Content="ACTION 34" HorizontalAlignment="Left" Margin="340,72,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
+                            <Canvas HorizontalAlignment="Left" VerticalAlignment="Top" Width="414" Height="91" Margin="7.5,4.5,5,4.5">
+                                <!-- ACTIONS 1 -->
+                                <Button x:Name="ActionButtonRow0Col0" Content="Search For Livimon" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="True" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow0Col1" Content="" HorizontalAlignment="Left" Margin="105,0,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow0Col2" Content="" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow0Col3" Content="" HorizontalAlignment="Left" Margin="315,0,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <!-- ACTIONS 1 -->
+                                <Button x:Name="ActionButtonRow1Col0" Content="" HorizontalAlignment="Left" Margin="0,24,0,0"   VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow1Col1" Content="" HorizontalAlignment="Left" Margin="105,24,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow1Col2" Content="" HorizontalAlignment="Left" Margin="210,24,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow1Col3" Content="" HorizontalAlignment="Left" Margin="315,24,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <!-- ACTIONS 2 -->
+                                <Button x:Name="ActionButtonRow2Col0" Content="" HorizontalAlignment="Left" Margin="0,48,0,0"   VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow2Col1" Content="" HorizontalAlignment="Left" Margin="105,48,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow2Col2" Content="" HorizontalAlignment="Left" Margin="210,48,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow2Col3" Content="" HorizontalAlignment="Left" Margin="315,48,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <!-- ACTIONS 3 -->
+                                <Button x:Name="ActionButtonRow3Col0" Content="" HorizontalAlignment="Left" Margin="0,72,0,0"   VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow3Col1" Content="" HorizontalAlignment="Left" Margin="105,72,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow3Col2" Content="" HorizontalAlignment="Left" Margin="210,72,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
+                                <Button x:Name="ActionButtonRow3Col3" Content="" HorizontalAlignment="Left" Margin="315,72,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0, 0" Height="19" IsEnabled="False" Click="click_buttonPressed"/>
                             </Canvas>
                         </Border>
                     </Canvas>
                 </Border>
 
                 <!-- MAIN TEXT DESCRIPTION -->
-                <!-- 1215 width = full, 765 = 2 columns-->
                 <Border BorderBrush="#FF555555" BorderThickness="5"  Margin="460,355,0,0" Width="765" Height="295" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.RowSpan="2">
                     <ScrollViewer Height="285" Margin="0,0,0,0" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="1" Grid.RowSpan="1" HorizontalAlignment="Left" Width="753" Background="#FF222222">
-                        <TextBlock x:Name="MainText" HorizontalAlignment="Left" Margin="2,2,0,2" TextWrapping="Wrap" Text="You wake up in a dark forest...
-                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a                                   av
-                                   a
-          a                         aava
-a           a                       a
-a                                   a
-a                       a        a
-a      a                             a
-a                                   a
-a    a                               aaa
-aa a                                  a
-aa                                   a
-a                                   a
-                                   aa
-                                   a
-                                   a" VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="720" Foreground="#FFE2E2E2"/>
+                        <TextBlock x:Name="MainText" HorizontalAlignment="Left" Margin="2,2,0,2" TextWrapping="Wrap" Text="You are standing in a patch of grassland. The weather is rather pleasant currently. It looks like it rained recently. There is a slight wind, and you can see dark clouds in the distance." VerticalAlignment="Top" FontFamily="Cabin" FontSize="16" Width="720" Foreground="#FFE2E2E2"/>
                     </ScrollViewer>
                 </Border>
 
-                <!-- THE 25+ buttons -->
-                <Button x:Name="CloseSave" Content="New Game" HorizontalAlignment="Left" Margin="1150,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="NewSave" Content="Make Save" HorizontalAlignment="Left" Margin="1070,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="SaveFile" Content="Overwrite Save" HorizontalAlignment="Left" Margin="990,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="LoadFile" Content="Load Save" HorizontalAlignment="Left" Margin="910,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="Options" Content="Options" HorizontalAlignment="Left" Margin="830,5,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-
-                <!-- UNUSED INVENTORY BUTTONS
-                <Button x:Name="MiddleLeftButton1" Content="INVENTORY" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleLeftButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="90,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleLeftButton5" Content="REALLY" HorizontalAlignment="Left" Margin="330,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-
-                <Button x:Name="MiddleCenterButton1" Content="MAP" HorizontalAlignment="Left" Margin="460,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
-
-                <Button x:Name="MiddleRightButton1" Content="PUT" HorizontalAlignment="Left" Margin="830,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleRightButton2" Content="LIVIMON" HorizontalAlignment="Left" Margin="910,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleRightButton3" Content="TEAM" HorizontalAlignment="Left" Margin="990,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleRightButton4" Content="INTERACTIONS" HorizontalAlignment="Left" Margin="1070,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="MiddleRightButton5" Content="HERE" HorizontalAlignment="Left" Margin="1150,326,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                
-                <Button x:Name="BottomLeftButton1" Content="TALKING" HorizontalAlignment="Left" Margin="10,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomLeftButton2" Content="RESPONSES" HorizontalAlignment="Left" Margin="90,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomLeftButton3" Content="GO" HorizontalAlignment="Left" Margin="170,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomLeftButton4" Content="HERE" HorizontalAlignment="Left" Margin="250,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-
-                <Button x:Name="BottomCenterButton1" Content="NPC" HorizontalAlignment="Left" Margin="460,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomCenterButton2" Content="ACTIONS" HorizontalAlignment="Left" Margin="540,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomCenterButton3" Content="GO" HorizontalAlignment="Left" Margin="620,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomCenterButton4" Content="HERE" HorizontalAlignment="Left" Margin="700,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-
-                <Button x:Name="BottomRightButton1" Content="THE" HorizontalAlignment="Left" Margin="830,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomRightButton2" Content="SELF" HorizontalAlignment="Left" Margin="910,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomRightButton3" Content="ACTIONS" HorizontalAlignment="Left" Margin="990,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomRightButton4" Content="GO" HorizontalAlignment="Left" Margin="1070,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>
-                <Button x:Name="BottomRightButton5" Content="HERE" HorizontalAlignment="Left" Margin="1150,625,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0, 0" Height="19" Click="click_buttonPressed"/>-->
+                <!-- Top Right Buttons -->
+                <Button x:Name="Options" Content="Options" HorizontalAlignment="Left" Margin="785,5,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="LoadFile" Content="Load Save" HorizontalAlignment="Left" Margin="875,5,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="SaveFile" Content="Overwrite Save" HorizontalAlignment="Left" Margin="965,5,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="NewSave" Content="Make Save" HorizontalAlignment="Left" Margin="1055,5,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
+                <Button x:Name="CloseSave" Content="New Game" HorizontalAlignment="Left" Margin="1145,5,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0, 0" Height="20" Click="click_buttonPressed"/>
             </Grid>
         </Viewbox>
     </Border>

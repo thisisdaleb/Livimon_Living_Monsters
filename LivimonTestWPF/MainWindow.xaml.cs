@@ -162,7 +162,7 @@ namespace LivimonTestWPF
         {
             while (true)
             {
-                Thread.Sleep(255); 
+                Thread.Sleep(5); 
                 Dispatcher.Invoke(() =>
                 {
                     if (GUIHandler.isReadyToUpdate())

@@ -30,6 +30,7 @@
         <!-- 
         SCROLLBAR STYLE MODOFIED FROM
         https://stackoverflow.com/questions/37095415/wpf-scrollbar-styles
+        Replace this eventually if I plan on ever actually doing anything with this game
         -->
 
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
