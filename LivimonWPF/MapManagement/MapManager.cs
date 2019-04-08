@@ -1,4 +1,4 @@
-﻿namespace LivimonTestWPF
+﻿namespace LivimonWPF
 {
     abstract class MapManager
     {

@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 //handler is probably the incorrect name
 //This allows us to replace the GUI whenever we want
-namespace LivimonTestWPF
+namespace LivimonWPF
 {
     //the Game will hand off info to this class, which will call the appropriate functions inside of the GUI class to pass it back in
     static class GUIHandler

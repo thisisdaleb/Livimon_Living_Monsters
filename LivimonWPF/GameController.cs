@@ -2,7 +2,7 @@
 //This allows us to replace the GUI whenever we want
 using System;
 
-namespace LivimonTestWPF
+namespace LivimonWPF
 {
     //the GUI will hand off info to this class, which will call the appropriate functions inside of the game logic class to pass it back in
     class GameController

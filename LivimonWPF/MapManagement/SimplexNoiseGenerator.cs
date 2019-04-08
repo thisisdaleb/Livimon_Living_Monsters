@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LivimonTestWPF
+namespace LivimonWPF
 {
     /* OpenSimplex Noise in C#
      * Ported from https://gist.github.com/KdotJPG/b1270127455a94ac5d19

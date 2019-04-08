@@ -16,7 +16,7 @@ using System.Windows.Forms;
 using System.Threading;
 using Button = System.Windows.Controls.Button;
 
-namespace LivimonTestWPF
+namespace LivimonWPF
 {
     public partial class MainWindow : Window
     {

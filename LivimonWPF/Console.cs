@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Threading;
 
-namespace LivimonTestWPF
+namespace LivimonWPF
 {
     //https://stackoverflow.com/questions/3670057/does-console-writeline-block
     public static class Console

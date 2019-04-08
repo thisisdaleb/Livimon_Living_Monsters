@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Media;
 
-namespace LivimonTestWPF
+namespace LivimonWPF
 {
 
     class WorldMapManager : MapManager

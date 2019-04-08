@@ -1,7 +1,7 @@
-﻿<Application x:Class="LivimonTestWPF.App"
+﻿<Application x:Class="LivimonWPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:LivimonTestWPF"
+             xmlns:local="clr-namespace:LivimonWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="Button">

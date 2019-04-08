@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LivimonTestWPF.Properties
+namespace LivimonWPF.Properties
 {
 
 

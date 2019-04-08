@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LivimonTestWPF
+namespace LivimonWPF
 {
     public static class Utility
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LivimonTestWPF
+namespace LivimonWPF
 {
     //this is just an interface for the Simplex Noise Generator
     //currently it doesn't use octaves, which could reduce the straight edges you can find in the map
